@@ -1,0 +1,16 @@
+//output:../contact.html
+
+- var no_nav = false
+- var page = "Contact"
+
+doctype html
+html(lang="en")
+  head
+    include _head.jade
+  body
+    include _navbar.jade
+    .colour-bar
+    #content.content
+        include content/content_contact.html
+    include _footer.jade
+    include _scripts.jade

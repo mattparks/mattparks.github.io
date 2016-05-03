@@ -1,0 +1,141 @@
+.contact-form .large {
+    width: 100%;
+    *width: 94%;
+}
+
+.contact-form .medium {
+    width: 50%;
+    *width: 47%;
+}
+
+.contact-form .small {
+    width: 25%;
+    *width: 23%;
+}
+
+.contact-form textarea.large {
+    width: 100%;
+    *width: 94%;
+    height: 20em;
+}
+
+.contact-form textarea.medium {
+    width: 100%;
+    *width: 94%;
+    height: 10em;
+}
+
+.contact-form textarea.small {
+    width: 100%;
+    *width: 94%;
+    height: 5.5em;
+}
+
+.contact-form div.title {
+    margin: 0;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background-color: #f6f6f6;
+    background-color: rgba(0, 0, 0, 0.02);
+    border-top: 1px solid #d0dada;
+}
+
+.contact-form textarea {
+    height: auto;
+}
+
+.contact-form select {
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+}
+
+.contact-form input[type=checkbox], .contact-form input[type=radio] {
+    z-index: 1;
+    position: absolute;
+    float: left;
+    width: 1em;
+    height: 1em;
+    font-size: 1em;
+    opacity: 0.01;
+    margin: 0;
+    cursor: pointer;
+}
+
+.contact-form input[type=radio]+span, .contact-form input[type=checkbox]+span {
+    height: 19px;
+    margin-right: -19px;
+    padding-top: 0;
+    z-index: 0;
+    position: relative;
+    left: 0;
+    top: 0;
+    vertical-align: top;
+    font-size: 1.1em;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.contact-form input[type=radio]+span:before, .contact-form input[type=checkbox]+span:before {
+    position: relative;
+    font-family: formoid;
+    margin-right: 0.2em;
+    color: #e5e5e5;
+    font-size: 1em;
+    line-height: 0.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.contact-form input[type=checkbox]+span:before {
+    content: "\e003";
+}
+
+.contact-form input[type=checkbox]:hover+span:before {
+    content: "\e003";
+}
+
+.contact-form input[type=checkbox]:checked+span:before {
+    content: "\e002";
+}
+
+.contact-form input[type=radio]+span:before {
+    content: "\e001";
+}
+
+.contact-form input[type=radio]:hover+span:before {
+    content: "\e001";
+}
+.contact-form input[type=radio]:checked+span:before {
+    content: "\e000";
+}
+
+.contact-form input[type=text], .contact-form input[type=tel], .contact-form input[type=password], .contact-form input[type=email], .contact-form input[type=url], .contact-form input[type=date], .contact-form input[type=number], .contact-form textarea, .contact-form .element-file .file_text, .contact-form select, .contact-form button {
+    border: solid 2px #e5e5e5;
+    border-radius: 0;
+    background: #fff;
+    -webkit-transition: border-color 0.3s;
+    transition: border-color 0.3s;
+    resize: none;
+    outline: medium none;
+    padding: 0.4em;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 1.1em;
+}
+
+.contact-form .element-address input[type=text], .contact-form .element-name input[type=text], .contact-form .element-file .file_text, .contact-form textarea {
+    width: 100%;
+    *width: 94%;
+}
+
+.contact-form input[type=checkbox]:hover+span:before, .contact-form input[type=radio]:hover+span:before, .contact-form .rating:hover .rating-star:hover:after, .contact-form .rating:hover .rating-star:hover ~ .rating-star:after {
+    color: #8dc9e5;
+}
+
+.contact-form input[type=checkbox]:checked+span:before, .contact-form input[type=radio]:checked+span:before, .contact-form .rating-input:checked ~ .rating-star:after {
+    color: #2da5da;
+}

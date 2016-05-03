@@ -1,0 +1,15 @@
+//output:../index.html
+
+- var no_nav = false
+
+doctype html
+html(lang="en")
+  head
+    include _head.jade
+  body
+    include _navbar.jade
+    .colour-bar
+    #content.content
+        include content/content_index.html
+    include _footer.jade
+    include _scripts.jade

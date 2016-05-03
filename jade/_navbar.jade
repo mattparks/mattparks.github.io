@@ -1,0 +1,18 @@
+if no_nav == false
+  #cssmenu
+    ul.nav-menu-items
+      li
+        a.sitename(href='index.html') Mattparks
+      li
+        a(href='#projects', onclick='swal("Oops...", "Projects page not created yet! It will come soon.", "error")') Projects
+        ul
+          li
+            a(href='#', onclick='swal("Oops...", "Project 1 page is not created yet! It will come soon.", "error")') Project 1
+          li
+            a(href='#', onclick='swal("Oops...", "Project 2 page is not created yet! It will come soon.", "error")') Project 2
+          li
+            a(href='#', onclick='swal("Oops...", "Project 3 page is not created yet! It will come soon.", "error")') Project 3
+      li
+        a(href='about.html') About
+      li
+        a(href='contact.html') Contact
