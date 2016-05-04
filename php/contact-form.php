@@ -1,21 +1,11 @@
 <?php
-  function died($error) {
-      echo "I am very sorry, but there were error(s) found with the form you submitted. ";
-      echo $error."<br /><br />";
-      echo "Please go back and fix these errors.<br /><br />";
-      die();
-  }
+  error_reporting(-1);
+  ini_set('display_errors', 'On');
+  set_error_handler("var_dump");
 
   function clean_string($string) {
     $bad = array("content-type","bcc:","to:","cc:","href");
     return str_replace($bad,"",$string);
-  }
-
-  if(!isset($_POST['Name']) ||
-      !isset($_POST['Email']) ||
-      !isset($_POST['Subject']) ||
-      !isset($_POST['Message'])) {
-    died('I am sorry, but there appears to be a problem with the form you submitted.');
   }
 
   $email_to = "mattparks5855@gmail.com";
@@ -24,38 +14,23 @@
   $subject = "Mattparks Contact: " . Trim(stripslashes($_POST['Subject']));
   $message = Trim(stripslashes($_POST['Message']));
 
-  $error_message = "";
+  $body = "Name: ".clean_string($name)."\n";
+  $body .= "Email: ".clean_string($email_from)."\n";
+  $body .= "Subject: ".clean_string($subject)."\n";
+  $body .= "".clean_string($message)."\n";
+  echo $body;
 
-  $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
-
-  if(!preg_match($email_exp,$email_from)) {
-    $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
-  }
-
-  $string_exp = "/^[A-Za-z .'-]+$/";
-
-  if(!preg_match($string_exp,$name)) {
-    $error_message .= 'The Name you entered does not appear to be valid.<br />';
-  }
-
-  if(strlen($subject) < 2) {
-    $error_message .= 'The Subject you entered do not appear to be valid.<br />';
-  }
-
-  if(strlen($message) < 2) {
-    $error_message .= 'The Message you entered do not appear to be valid.<br />';
-  }
-
-  if(strlen($error_message) > 0) {
-    died($error_message);
-  }
-
-  $email_message = "Form details below.\n\n";
-  $email_message .= "Name: ".clean_string($name)."\n";
-  $email_message .= "Email: ".clean_string($email_from)."\n";
-  $email_message .= "Subject: ".clean_string($subject)."\n";
-  $email_message .= "Message: ".clean_string($message)."\n";
-
-  $headers = 'From: '.$email_from."\r\n". 'Reply-To: '.$email_from."\r\n" . 'X-Mailer: PHP/' . phpversion();
-  @mail($email_to, $subject, $email_message, $headers);
+  $headers = "MIME-Version: 1.1" . PHP_EOL;
+  $headers .= "Content-type: text/html; charset=utf-8" . PHP_EOL;
+  $headers .= "Content-Transfer-Encoding: 8bit" . PHP_EOL;
+  $headers .= "Date: " . date('r', $_SERVER['REQUEST_TIME']) . PHP_EOL;
+  $headers .= "Message-ID: <" . $_SERVER['REQUEST_TIME'] . md5($_SERVER['REQUEST_TIME']) . '@' . $_SERVER['SERVER_NAME'] . '>' . PHP_EOL;
+  $headers .= "From: " . "=?UTF-8?B?".base64_encode($name)."?=" . "<$email_from>" . PHP_EOL;
+  $headers .= "Return-Path: $email_to" . PHP_EOL;
+  $headers .= "Reply-To: $email_from" . PHP_EOL;
+  $headers .= "X-Mailer: PHP/". phpversion() . PHP_EOL;
+  $headers .= "X-Originating-IP: " . $_SERVER['SERVER_ADDR'] . PHP_EOL;
+  $sent = mail($email_to, "=?utf-8?B?".base64_encode($subject)."?=", $body, $headers);
+  echo "Message sent correctly: ";
+  echo ($sent) ? 'true' : 'false';
 ?>
