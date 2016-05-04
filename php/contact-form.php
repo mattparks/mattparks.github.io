@@ -3,24 +3,19 @@
   ini_set('display_errors', 'On');
   set_error_handler("var_dump");
 
-  function clean_string($string) {
-    $bad = array("content-type","bcc:","to:","cc:","href");
-    return str_replace($bad,"",$string);
-  }
-
   $email_to = "mattparks5855@gmail.com";
   $name = Trim(stripslashes($_POST['Name']));
   $email_from = Trim(stripslashes($_POST['Email']));
   $subject = "Mattparks Contact: " . Trim(stripslashes($_POST['Subject']));
   $message = Trim(stripslashes($_POST['Message']));
 
-  $body = "Name: ".clean_string($name)."\n";
-  $body .= "Email: ".clean_string($email_from)."\n";
-  $body .= "Subject: ".clean_string($subject)."\n";
-  $body .= "".clean_string($message)."\n";
+  $body  = "Name: " . $name . "\n";
+  $body .= "Email: " . $email_from . "\n";
+  $body .= "Subject: " . $subject . "\n" . "\n";
+  $body .= $message . "\n";
   echo $body;
 
-  $headers = "MIME-Version: 1.1" . PHP_EOL;
+  $headers  = "MIME-Version: 1.1" . PHP_EOL;
   $headers .= "Content-type: text/html; charset=utf-8" . PHP_EOL;
   $headers .= "Content-Transfer-Encoding: 8bit" . PHP_EOL;
   $headers .= "Date: " . date('r', $_SERVER['REQUEST_TIME']) . PHP_EOL;
