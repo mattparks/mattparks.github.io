@@ -12,6 +12,25 @@
     </table>
   </div>
 
+  <div style="max-width:720px;min-width:150px">
+    <div class="ct-chart ct-golden-section" id="chart1"></div>
+    <div class="ct-chart ct-golden-section" id="chart2"></div>
+  </div>
+
+  <script>
+    // Initialize a Line chart in the container with the ID chart1
+    new Chartist.Line('#chart1', {
+      labels: [1, 2, 3, 4],
+      series: [[100, 120, 180, 200]]
+    });
+
+    // Initialize a Line chart in the container with the ID chart2
+    new Chartist.Bar('#chart2', {
+      labels: [1, 2, 3, 4],
+      series: [[5, 2, 8, 3]]
+    });
+  </script>
+
   <section id="cd-timeline" class="cd-container">
     <div class="cd-timeline-block">
       <div class="cd-timeline-img cd-explosion">

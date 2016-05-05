@@ -1,4 +1,25 @@
 .iTable {
+font-family: sans-serif;
+-webkit-font-smoothing: antialiased;
+font-size: 115%;
+width: auto;
+overflow: auto;
+display: block;
+}
+.iTable th {
+background-color: rgb(112, 196, 105);
+font-weight: normal;
+color: white;
+padding: 20px 30px;
+text-align: center;
+}
+.iTable td {
+background-color: rgb(238, 238, 238);
+padding: 20px 30px;
+color: rgb(111, 111, 111);
+}
+
+/*.iTable {
 	margin:0px;padding:0px;
 	width:100%;
 	border:1px solid #000000;
@@ -65,4 +86,4 @@
   tr:first-child td:last-child{
   	border-width:0px 0px 1px 1px;
   }
-}
+}*/

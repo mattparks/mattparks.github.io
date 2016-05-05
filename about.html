@@ -27,11 +27,15 @@
     <!--		autocollect: true-->
     <!--	};-->
     <!--script(src='//cdn.transifex.com/live.js')-->
+    <!-- Scripts.-->
+    <script src="./js/jquery-1.11.2.js"></script>
+    <script src="./js/jquery.poshytip.min.js"></script>
+    <script src="./js/chartist.min.js"></script>
   </head>
   <body>
     <div id="cssmenu">
       <ul class="nav-menu-items">
-        <li><a href="index.html" class="sitename">Mattparks</a></li>
+        <li><a href="./index.html" class="sitename">Mattparks</a></li>
         <li><a href="#projects" onclick="swal(&quot;Oops...&quot;, &quot;Projects page not created yet! It will come soon.&quot;, &quot;error&quot;)">Projects</a>
           <ul>
             <li><a href="#" onclick="swal(&quot;Oops...&quot;, &quot;Project 1 page is not created yet! It will come soon.&quot;, &quot;error&quot;)">Project 1</a></li>
@@ -39,8 +43,8 @@
             <li><a href="#" onclick="swal(&quot;Oops...&quot;, &quot;Project 3 page is not created yet! It will come soon.&quot;, &quot;error&quot;)">Project 3</a></li>
           </ul>
         </li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./contact.html">Contact</a></li>
       </ul>
     </div>
     <div class="colour-bar"></div>
@@ -57,6 +61,25 @@
       <tr><td>64-bit</td><td>18,446,744,073,709,551,616</td><td>2^64</td></tr>
     </table>
   </div>
+
+  <div style="max-width:720px;min-width:150px">
+    <div class="ct-chart ct-golden-section" id="chart1"></div>
+    <div class="ct-chart ct-golden-section" id="chart2"></div>
+  </div>
+
+  <script>
+    // Initialize a Line chart in the container with the ID chart1
+    new Chartist.Line('#chart1', {
+      labels: [1, 2, 3, 4],
+      series: [[100, 120, 180, 200]]
+    });
+
+    // Initialize a Line chart in the container with the ID chart2
+    new Chartist.Bar('#chart2', {
+      labels: [1, 2, 3, 4],
+      series: [[5, 2, 8, 3]]
+    });
+  </script>
 
   <section id="cd-timeline" class="cd-container">
     <div class="cd-timeline-block">
@@ -191,8 +214,6 @@
       <p>Copyright &copy 2013-2016 Matthew Albrecht. | All Rights Reserved</p>
       <p>Wisconsin 53051. | Phone (414)-429-1461</p>
     </footer>
-    <script src="./js/jquery-1.11.2.js"></script>
-    <script src="./js/jquery.poshytip.min.js"></script>
     <script src="./js/slideshow.js"></script>
     <script src="./js/sweetalert.js"></script>
     <script src="./js/navigation.js"></script>
