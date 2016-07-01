@@ -12,24 +12,17 @@ $background-colour: colour("grey", "lighten-5") !default;
 
 $secondary-colour: colour("blue", "accent-3") !default;
 
-.primary-colour {
-  background-color: $primary-colour !important;
-}
+$scroll-bar-size: 12px;
+$scroll-bar-colour: $primary-colour;
 
-.primary-colour.text {
-  color: $primary-colour !important;
-}
-
-.secondary-colour {
-  background-color: $secondary-colour !important;
-}
-
-.secondary-colour.text {
-  color: $secondary-colour !important;
-}
+.primary-colour { background-color: $primary-colour !important; }
+.primary-colour.text { color: $primary-colour !important; }
+.secondary-colour { background-color: $secondary-colour !important; }
+.secondary-colour.text { color: $secondary-colour !important; }
 
 @import "components/_normalize";
 @import "components/_style";
+@import "components/_scrollbar";
 @import "components/_material";
 @import "components/_slideshow";
 @import "components/_table";
@@ -38,3 +31,4 @@ $secondary-colour: colour("blue", "accent-3") !default;
 @import "components/_timeline";
 @import "components/_chartist";
 @import "components/_contact-form";
+@import "components/_webgl";

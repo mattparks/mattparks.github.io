@@ -1,0 +1,17 @@
+//output:../canvas.html
+
+- var no_nav = false
+- var page = "Canvas Example"
+
+doctype html
+html(lang="en")
+  head
+    include _head.jade
+  html
+    body(onload='start()')
+    include _navbar.jade
+    .colour-bar
+    #content.content
+        include content/content_canvas.html
+    include _footer.jade
+    include _scripts.jade

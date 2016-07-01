@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="description" content="Mattparks default website description.">
-    <title>Mattparks Homepage</title>
+    <title>Canvas Example - Mattparks Website</title>
     <!-- Favicons.-->
     <link rel="apple-touch-icon-precomposed" href="./img/favicon/apple-touch-icon-152x152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
@@ -32,7 +32,8 @@
     <script src="./js/jquery.poshytip.min.js"></script>
     <script src="./js/chartist.min.js"></script>
   </head>
-  <body>
+  <html>
+    <body onload="start()"></body>
     <div id="cssmenu">
       <ul class="nav-menu-items">
         <li><a href="./index.html" class="sitename">Mattparks</a></li>
@@ -49,36 +50,46 @@
       </ul>
     </div>
     <div class="colour-bar"></div>
-    <div id="content" class="content"><div class="mainContent">
+    <div id="content" class="content"><div class="mainContent" style="min-width:150px">
 	<center>
-		<div id="slider-container1" id="main-form">
-			<div class="ws_images">
-				<ul>
-					<li><img src="./img/slideshow/4space.jpg" alt="4Space Mod" title="4Space Mod" id="1_0"/>4Space is a Galacticraft addon that includes all of the planets in our solar system, and more!</li>
-					<li><img src="./img/slideshow/minestellar.jpg" alt="Minestellar Mod" title="Minestellar Mod" id="1_1"/>4Space is a Galacticraft addon that includes all of the planets in our solar system, and more!</li>
-					<li><img src="./img/slideshow/flounder.png" alt="Flounder Engine" title="Flounder Engine" id="1_2"/>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</li>
-					<li><img src="./img/slideshow/voxel.png" alt="Voxel Game" title="Voxel Game" id="1_3"/>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</li>
-				</ul>
-			</div>
-		</div>
-	</center>
-</div>
+    <canvas id="glcanvas" width="1080" height="720">
+      Your browser doesn't appear to support the <code>&lt;canvas&gt;</code> element.
+    </canvas>
 
-<div class="cardContainer">
-	<aside class="card1">
-		<h1>Site Overview</h1>
-		<p>This is my homepage, I will post my projects onto this site. I create mods, games and other programs; I also work with First FRC team 837, so you will also see some First programs posted here to.</p>
-	</aside>
+		<script type="text/JavaScript">
+      var canvas;
+      var openGl;
 
-	<aside class="card2">
-		<h1>My Mission</h1>
-		<p>My goal is to create stable content rich mods, games and programs that are stable and don't take away from game play / usability.</p>
-	</aside>
+			function start() {
+				canvas = document.getElementById("glcanvas");
 
-	<aside class="card3">
-		<h1>What's New</h1>
-		<p>I am currently working on <a href="https://bitbucket.org/account/user/darkplayers/projects/FP">The Flounder Project</a>, a 3D/2D game engine. I am also working on a voxel space game. I'm also still updating the 4Space addon, soon I might add more worlds.</p>
-	</aside>
+				initWebGL(canvas); // Initialize OpenGL
+
+				// Only continue if WebGL is available and working.
+				if (openGl) {
+					openGl.clearColor(0.0, 0.0, 0.0, 1.0);
+					openGl.clearDepth(1.0);
+					openGl.enable(openGl.DEPTH_TEST);
+					openGl.depthFunc(openGl.LEQUAL);
+				}
+			}
+
+			function initWebGL() {
+				openGl = null;
+
+				try {
+					openGl = canvas.getContext("experimental-webgl");
+        } catch(e) {
+        }
+
+        if (!openGl) {
+					swal("Oops...", "Unable to initialize WebGL. Your browser may not support it.", "error");
+        } else {
+					swal("Hurrah!!!", "WebGl was able to initialize.", "success");
+				}
+			}
+		</script>
+  </center>
 </div>
 
     </div>
@@ -92,5 +103,5 @@
     <script src="./js/navigation.js"></script>
     <script src="./js/twitter.js"></script>
     <script src="./js/timeline.js"></script>
-  </body>
+  </html>
 </html>
