@@ -1159,9 +1159,9 @@ hr { border: 0; height: 1px; background-image: linear-gradient(to right, transpa
 
 .scroll .content .left { z-index: 3; position: relative; width: 39%; float: left; padding: 1%; }
 
-.scroll .move { position: relative; width: 100%; height: 49px; line-height: 49px; color: #fafafa; background: rgba(51, 51, 51, 0.8); }
+.move { z-index: 3; position: relative; width: 100%; height: 49px; top: 0; line-height: 49px; color: #fafafa; background: rgba(51, 51, 51, 0.8); }
 
-.scroll .move img { z-index: 5; position: relative; top: 9px; width: 31px; height: 31px; cursor: pointer; opacity: 0.75; filter: alpha(opacity=75); }
+.move img { z-index: 5; position: relative; top: 9px; width: 31px; height: 31px; cursor: pointer; opacity: 0.75; filter: alpha(opacity=75); }
 
 @media only screen and (max-width: 800px) { .scroll .content h1, .scroll .content p { text-align: center; }
   .scroll .content .right { position: static; width: 100%; float: center; padding: 1%; }

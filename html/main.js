@@ -66,7 +66,8 @@ function loadNext(i) {
     };
     li.appendChild(a);
 
-    $(getScrollID(pages[i])).css("left", i % 2 ? "-100%" : "200%")
+    $(getScrollID(pages[i])).css("left", i % 2 ? "-100%" : "200%");
+    $(getMoveID(pages[i])).css("left", i % 2 ? "-100%" : "200%");
 
     // Register next page, or end.
     var nextI = i + 1;
@@ -112,8 +113,6 @@ $(window).on('scroll', function() {
 
 function updatePages() {
   var pageBottom = $(document).scrollTop() + $(window).height();
-  var moveHeight = Math.atan(2 * (Math.PI / 180)) * $(window).width();
-
   pagesHeight = 0;
 
   for (var i = 0; i < pages.length; i++) {
@@ -133,8 +132,7 @@ function updateNav() {
   $("#sliderProgress").css("width", ($(window).width() / pages.length) + "px");
 
   for (var i = 0; i < pages.length; i++) {
-    var itemID = "#navitem_" + getScroll(pages[i]);
-    $(itemID).css("width", ($(window).width() / pages.length) + "px");
+    $(getNavitemID(pages[i])).css("width", ($(window).width() / pages.length) + "px");
   }
 }
 
@@ -178,12 +176,32 @@ function reveal(object) {
     left: "0",
   }, 1000, function() {
   });
+  $(getMoveID(object)).animate({
+    left: "0",
+  }, 1000, function() {
+  });
 }
 
 function getScrollID(object) {
-  return "#scroll_" + object.name.replace(/ /g,"_").toLowerCase();
+  return "#" + getScroll(object);
+}
+
+function getMoveID(object) {
+  return "#" + getMove(object);
+}
+
+function getNavitemID(object) {
+  return "#" + getNavitem(object);
 }
 
 function getScroll(object) {
   return "scroll_" + object.name.replace(/ /g,"_").toLowerCase();
+}
+
+function getMove(object) {
+  return "move_" + object.name.replace(/ /g,"_").toLowerCase();
+}
+
+function getNavitem(object) {
+  return "navitem_" + object.name.replace(/ /g,"_").toLowerCase();
 }
