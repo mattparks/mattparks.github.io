@@ -1,21 +1,21 @@
-function Page (id, path, element, name, anLength) {
+function Page (id, path, element, name) {
+  this.id = id;
   this.path = path;
   this.element = element;
   this.name = name;
   this.visible = false;
-  this.anLength = anLength;
   this.divHeight = 0;
-  this.id = id;
 }
 
 var pages = [
-  new Page(0, './html/_intro.html', "scroll_intro", "Intro", 1000),
-  new Page(1, "./html/_about.html", "scroll_about", "About", 1200),
-  new Page(2, "./html/_skills.html", "scroll_skills", "Skills", 1000),
-  new Page(3, "./html/_history.html", "scroll_history", "History", 1400),
-  new Page(4, "./html/_contact.html", "scroll_contact", "Contact", 1000),
+  new Page(0, './html/_intro.html', "scroll_intro", "Intro"),
+  new Page(1, "./html/_about.html", "scroll_about", "About"),
+  new Page(2, "./html/_skills.html", "scroll_skills", "Skills"),
+  new Page(3, "./html/_history.html", "scroll_history", "History"),
+  new Page(4, "./html/_contact.html", "scroll_contact", "Contact"),
 ];
 var backgrounds = 5;
+var pagesHeight = 0;
 
 $(document).ready(function() {
   $("#background").hide();
@@ -40,15 +40,18 @@ function loadNext(i) {
     $("#main").append(data);
 
     // Load navbar
-  //  var li = document.createElement('li');
-  //  $("#navul").append(li);
-  //  var a = document.createElement('a');
-  //  var linkText = document.createTextNode(names[i]);
-  //  a.appendChild(linkText);
-  //  a.className += "navItem";
-  //  a.href = "#scroll_" + names[i].replace(/ /g,"_").toLowerCase();
-  //  li.appendChild(a);
-  //  updateNav();
+    var li = document.createElement('li');
+    $(".nav-menu-items").append(li);
+    var a = document.createElement('a');
+    var linkText = document.createTextNode(pages[i].name);
+    a.appendChild(linkText);
+    a.id = pages[i].name.toLowerCase() + "NavItem";
+    // a.href = "#scroll_" + pages[i].name.replace(/ /g,"_").toLowerCase();
+    a.onclick = function () {
+      scrollTo(pages[i].element);
+    };
+    li.appendChild(a);
+    updateNav();
 
     // Register next page, or end.
     var nextI = i + 1;
@@ -60,7 +63,7 @@ function loadNext(i) {
 }
 
 function changeImage(i) {
-  $("#background").attr("src", "../img/slideshow/" + i + ".jpg");
+  $("#background").attr("src", "./img/slideshow/" + i + ".jpg");
 
   var nextI = i + 1;
 
@@ -82,33 +85,44 @@ function changeImage(i) {
 }
 
 $(window).resize(function() {
-  updateNav();
   updatePages();
+  updateNav();
 });
 
 
 $(window).on('scroll', function() {
   updatePages();
+  updateNav();
 });
 
 function updatePages() {
   var pageBottom = $(document).scrollTop() + $(window).height();
-  var pageToSection = 0;
+  pagesHeight = 0;
 
   for (var i = 0; i < pages.length; i++) {
     if (!pages[i].visible) {
-      if (pageToSection <= pageBottom + 75) {
+      if (pagesHeight <= pageBottom + 75) {
         reveal(pages[i]);
       }
     }
 
     pages[i].divHeight = $("#" + pages[i].element).height();
-    pageToSection += pages[i].divHeight;
+    pagesHeight += pages[i].divHeight;
   }
 }
 
 function updateNav() {
-//  $(".navItem").css('width', (window.innerWidth / names.length) + 'px');
+  for (var i = 0; i < pages.length; i++) {
+    var itemID = "#" + pages[i].name.toLowerCase() + "NavItem";
+  //  var itemLength = (pages[i].divHeight / pagesHeight) * $(window).width();
+  //  $(itemID).css("width", itemLength + "px");
+
+   $(itemID).css("width", ($(window).width() / pages.length) + "px");
+  }
+
+  $("#sliderProgress").css("width", ($(window).width() / pages.length) + "px");
+  var sliderProgress = ($(document).scrollTop() / (pagesHeight - $(window).height())) * $(window).width();
+  $("#sliderProgress").css("left", sliderProgress + "px");
 }
 
 function scrollDown(current) {
@@ -121,15 +135,19 @@ function scrollDown(current) {
     }
   }
 
-  scrollTo(pages[currentPos + 1].element);
+  if (currentPos + 1 > pages.length) {
+    scrollTo(pages[pages.length].element);
+  } else {
+    scrollTo(pages[currentPos + 1].element);
+  }
 }
 
-function scrollTo(id) {
-  var target = "#" + id;
+function scrollTo(element) {
+  var target = "#" + element;
   var $target = $(target);
 
-  if (!getObject(id).visible) {
-    reveal(getObject(id));
+  if (!getObject(element).visible) {
+    reveal(getObject(element));
   }
 
   $('html, body').stop().animate({
@@ -146,13 +164,13 @@ function reveal(object) {
   $("#" + object.element).fadeIn();
   $("#" + object.element).animate({
     left: "0",
-  }, object.anLength, function() {
+  }, 1000, function() {
   });
 }
 
-function getObject(id) {
+function getObject(element) {
   for (var i = 0; i < pages.length; i++) {
-    if (pages[i].element === id) {
+    if (pages[i].element === element) {
       return pages[i];
     }
   }
