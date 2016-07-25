@@ -15,7 +15,6 @@ var pages = [
   new Page(4, "./html/_contact.html", "scroll_contact", "Contact"),
 ];
 var backgrounds = 5;
-var pagesHeight = 0;
 
 $(document).ready(function() {
   $("#background").hide();
@@ -29,7 +28,23 @@ $(document).ready(function() {
   setTimeout(function() {
     changeImage(1);
     updatePages();
+    updateNav();
   }, 1500);
+
+  setTimeout(function() {
+    $("#sliderProgress").animate({
+      top: "0",
+    }, 1000, function() {
+    });
+    $("#navbar").animate({
+      top: "0",
+    }, 1000, function() {
+    });
+    $("#cssmenu").animate({
+      top: "0",
+    }, 1000, function() {
+    });
+  }, 2000);
 });
 
 function loadNext(i) {
@@ -51,7 +66,6 @@ function loadNext(i) {
       scrollTo(pages[i].element);
     };
     li.appendChild(a);
-    updateNav();
 
     // Register next page, or end.
     var nextI = i + 1;
@@ -97,32 +111,41 @@ $(window).on('scroll', function() {
 
 function updatePages() {
   var pageBottom = $(document).scrollTop() + $(window).height();
-  pagesHeight = 0;
+
+  var moveHeight = Math.atan(2 * (Math.PI/180)) * $(window).width();
 
   for (var i = 0; i < pages.length; i++) {
     if (!pages[i].visible) {
-      if (pagesHeight <= pageBottom + 75) {
+      if ($(document).height() <= pageBottom + 75) {
         reveal(pages[i]);
       }
     }
 
     pages[i].divHeight = $("#" + pages[i].element).height();
-    pagesHeight += pages[i].divHeight;
+    $("#" + pages[i].element).css("padding-bottom", moveHeight + 30 + "px");
   }
 }
 
 function updateNav() {
   for (var i = 0; i < pages.length; i++) {
-    var itemID = "#" + pages[i].name.toLowerCase() + "NavItem";
-  //  var itemLength = (pages[i].divHeight / pagesHeight) * $(window).width();
-  //  $(itemID).css("width", itemLength + "px");
+  //  $("#" + pages[i].element).css("height", 780 + "px"); // TEMP CHEET: tempLargestDiv
 
-   $(itemID).css("width", ($(window).width() / pages.length) + "px");
+    var itemID = "#" + pages[i].name.toLowerCase() + "NavItem";
+    var itemLength = (pages[i].divHeight / $(document).height()) * $(window).width();
+    $(itemID).css("width", itemLength + "px");
+
+    $(itemID).css("width", ($(window).width() / pages.length) + "px");
   }
 
+  var distanceDown = ($(document).scrollTop()) / $(document).height();
+  console.log(
+    "DistanceDown=" + distanceDown +
+    ", ScrollTop=" + $(document).scrollTop() +
+    ", DocumentHeight=" + $(document).height()
+  );
+
   $("#sliderProgress").css("width", ($(window).width() / pages.length) + "px");
-  var sliderProgress = ($(document).scrollTop() / (pagesHeight - $(window).height())) * $(window).width();
-  $("#sliderProgress").css("left", sliderProgress + "px");
+  $("#sliderProgress").css("left", (distanceDown * $(window).width()) + "px");
 }
 
 function scrollDown(current) {

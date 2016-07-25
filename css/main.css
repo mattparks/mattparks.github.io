@@ -1151,22 +1151,30 @@ hr { border: 0; height: 1px; background-image: linear-gradient(to right, transpa
 
 .main { z-index: 2; position: relative; width: 100%; height: 100%; top: 0; transition: none; }
 
-.main .scroll { z-index: 3; position: relative; }
+.main .scroll, .main .scrollLeft, .main .scrollRight { z-index: 3; position: relative; background-color: #404456; padding-bottom: 150px; }
 
-.main .scroll .content { width: 100%; background-color: #FFFFFF; padding: 2%; line-height: 25px; overflow: hidden; display: block; background-color: #fafafa; }
+.main .scroll .content, .main .scrollLeft .content, .main .scrollRight .content { width: 100%; padding: 2%; line-height: 25px; overflow: hidden; display: block; background-color: #fafafa; }
 
-.main .scroll .content .right { z-index: 3; position: relative; width: 61%; float: right; padding: 1%; }
+.main .scroll .content .right, .main .scrollLeft .content .right, .main .scrollRight .content .right { z-index: 3; position: relative; width: 61%; float: right; padding: 1%; }
 
-.main .scroll .content .left { z-index: 3; position: relative; width: 39%; float: left; padding: 1%; }
+.main .scroll .content .left, .main .scrollLeft .content .left, .main .scrollRight .content .left { z-index: 3; position: relative; width: 39%; float: left; padding: 1%; }
 
-.main .scroll .move { width: 100%; height: 49px; line-height: 49px; top: 0; color: #fafafa; background: rgba(51, 51, 51, 0.8); transition: 0.5s; }
+.main .scroll .move, .main .scrollLeft .move, .main .scrollRight .move, .main .scroll .moveLeft, .main .scrollLeft .moveLeft, .main .scrollRight .moveLeft, .main .scroll .moveRight, .main .scrollLeft .moveRight, .main .scrollRight .moveRight { position: relative; width: 100%; height: 49px; line-height: 49px; top: 49px; color: #fafafa; background: rgba(51, 51, 51, 0.8); }
 
-.main .scroll .move img { z-index: 5; position: relative; top: 9px; width: 31px; height: 31px; cursor: pointer; opacity: 0.75; filter: alpha(opacity=75); }
+.main .scroll .move img, .main .scrollLeft .move img, .main .scrollRight .move img, .main .scroll .moveLeft img, .main .scrollLeft .moveLeft img, .main .scrollRight .moveLeft img, .main .scroll .moveRight img, .main .scrollLeft .moveRight img, .main .scrollRight .moveRight img { z-index: 5; position: relative; top: 9px; width: 31px; height: 31px; cursor: pointer; opacity: 0.75; filter: alpha(opacity=75); }
 
-@media only screen and (max-width: 800px) { .main .scroll .content h1 { text-align: center; }
-  .main .scroll .content p { text-align: center; }
-  .main .scroll .content .right { position: static; width: 100%; float: center; padding: 1%; }
-  .main .scroll .content .left { position: static; width: 100%; float: center; padding: 1%; } }
+.main .scroll .moveLeft, .main .scrollLeft .moveLeft, .main .scrollRight .moveLeft { -webkit-transform: skewY(-2deg); -moz-transform: skewY(-2deg); -ms-transform: skewY(-2deg); -o-transform: skewY(-2deg); transform: skewY(-2deg); }
+
+.main .scroll .moveRight, .main .scrollLeft .moveRight, .main .scrollRight .moveRight { -webkit-transform: skewY(2deg); -moz-transform: skewY(2deg); -ms-transform: skewY(2deg); -o-transform: skewY(2deg); transform: skewY(2deg); }
+
+.main .scrollLeft { left: 200%; display: none; }
+
+.main .scrollRight { left: -100%; display: none; }
+
+@media only screen and (max-width: 800px) { .main .scroll .content h1, .main .scrollLeft .content h1, .main .scrollRight .content h1 { text-align: center; }
+  .main .scroll .content p, .main .scrollLeft .content p, .main .scrollRight .content p { text-align: center; }
+  .main .scroll .content .right, .main .scrollLeft .content .right, .main .scrollRight .content .right { position: static; width: 100%; float: center; padding: 1%; }
+  .main .scroll .content .left, .main .scrollLeft .content .left, .main .scrollRight .content .left { position: static; width: 100%; float: center; padding: 1%; } }
 
 .valign-wrapper { display: flex; align-items: center; }
 
@@ -1256,13 +1264,13 @@ hr { border: 0; height: 1px; background-image: linear-gradient(to right, transpa
 
 ::-webkit-scrollbar-thumb:horizontal { width: 12px; background-color: #42A5F5; }
 
-#sliderProgress { z-index: 5; position: fixed; top: 0; left: -250px; height: 50px; width: 250px; background: rgba(66, 165, 245, 0.8); }
+#sliderProgress { z-index: 5; position: fixed; top: -50px; left: -250px; height: 50px; width: 250px; background: rgba(66, 165, 245, 0.8); }
 
-#navbar { z-index: 4; position: fixed; top: 0; left: 0; right: 0; width: 100%; height: 50px; background: rgba(51, 51, 51, 0.8); }
+#navbar { z-index: 4; position: fixed; top: -50px; left: 0; right: 0; width: 100%; height: 50px; background: rgba(51, 51, 51, 0.8); }
 
 #cssmenu, #cssmenu ul, #cssmenu ul li, #cssmenu ul li a, #cssmenu #menu-button { margin: 0; padding: 0; border: 0; list-style: none; line-height: 1; display: block; position: relative; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-#cssmenu { z-index: 6; position: fixed; top: 0; left: 0; right: 0; width: 100%; height: 50px; background: transparent; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+#cssmenu { z-index: 6; position: fixed; top: -50px; left: 0; right: 0; width: 100%; height: 50px; background: transparent; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 
 #cssmenu:after, #cssmenu > ul:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
 

@@ -50,14 +50,16 @@ hr {
   .scroll {
     z-index: 3;
     position: relative;
+    background-color: #404456;
+    padding-bottom: 150px;
 
     .content {
       width: 100%;
-      background-color: colour("shades", "white");
       padding: 2%;
       line-height: 25px;
       overflow: hidden;
       display: block;
+
       background-color: $background-colour;
 
       .right {
@@ -78,17 +80,17 @@ hr {
     }
 
     .move {
+      position: relative;
+
       width: 100%;
       height: 49px;
 
       line-height: 49px;
 
-      top: 0;
+      top: 49px;
 
       color: $background-colour;
       background:rgba(51, 51, 51, 0.8);
-
-      transition: 0.5s;
 
       img {
         z-index: 5;
@@ -101,6 +103,36 @@ hr {
         filter: alpha(opacity=75);
       }
     }
+
+    .moveLeft {
+      @extend .move;
+      -webkit-transform: skewY(-2deg);
+      -moz-transform: skewY(-2deg);
+      -ms-transform: skewY(-2deg);
+      -o-transform: skewY(-2deg);
+      transform: skewY(-2deg);
+    }
+
+    .moveRight {
+      @extend .move;
+      -webkit-transform: skewY(2deg);
+      -moz-transform: skewY(2deg);
+      -ms-transform: skewY(2deg);
+      -o-transform: skewY(2deg);
+      transform: skewY(2deg);
+    }
+  }
+
+  .scrollLeft {
+    @extend .scroll;
+    left: 200%;
+    display: none;
+  }
+
+  .scrollRight {
+    @extend .scroll;
+    left: -100%;
+    display: none;
   }
 }
 
