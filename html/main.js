@@ -1,20 +1,20 @@
-function Page (id, path, element, name) {
+function Page (id, path, name) {
   this.id = id;
   this.path = path;
-  this.element = element;
   this.name = name;
   this.visible = false;
   this.divHeight = 0;
 }
 
 var pages = [
-  new Page(0, './html/_intro.html', "scroll_intro", "Intro"),
-  new Page(1, "./html/_about.html", "scroll_about", "About"),
-  new Page(2, "./html/_skills.html", "scroll_skills", "Skills"),
-  new Page(3, "./html/_history.html", "scroll_history", "History"),
-  new Page(4, "./html/_contact.html", "scroll_contact", "Contact"),
+  new Page(0, './html/_intro.html', "Intro"),
+  new Page(1, "./html/_about.html", "About"),
+  new Page(2, "./html/_skills.html", "Skills"),
+  new Page(3, "./html/_history.html", "History"),
+  new Page(4, "./html/_contact.html", "Contact"),
 ];
 var backgrounds = 5;
+var pagesHeight = 0;
 
 $(document).ready(function() {
   $("#background").hide();
@@ -56,14 +56,13 @@ function loadNext(i) {
 
     // Load navbar
     var li = document.createElement('li');
+    li.id = "navitem_" + getScroll(pages[i]);
     $(".nav-menu-items").append(li);
     var a = document.createElement('a');
     var linkText = document.createTextNode(pages[i].name);
     a.appendChild(linkText);
-    a.id = pages[i].name.toLowerCase() + "NavItem";
-    // a.href = "#scroll_" + pages[i].name.replace(/ /g,"_").toLowerCase();
     a.onclick = function () {
-      scrollTo(pages[i].element);
+      scrollTo(pages[i]);
     };
     li.appendChild(a);
 
@@ -111,41 +110,66 @@ $(window).on('scroll', function() {
 
 function updatePages() {
   var pageBottom = $(document).scrollTop() + $(window).height();
+  var moveHeight = Math.atan(2 * (Math.PI / 180)) * $(window).width();
 
-  var moveHeight = Math.atan(2 * (Math.PI/180)) * $(window).width();
+  pagesHeight = 0;
 
   for (var i = 0; i < pages.length; i++) {
-    if (!pages[i].visible) {
-      if ($(document).height() <= pageBottom + 75) {
-        reveal(pages[i]);
-      }
+    pages[i].divHeight = $(getScrollID(pages[i])).height();
+
+    if (!pages[i].visible && pagesHeight <= pageBottom) {
+      reveal(pages[i]);
     }
 
-    pages[i].divHeight = $("#" + pages[i].element).height();
-    $("#" + pages[i].element).css("padding-bottom", moveHeight + 30 + "px");
+    pagesHeight += pages[i].divHeight;
+    $(getScrollID(pages[i])).css("padding-bottom", moveHeight + 30 + "px");
   }
 }
 
 function updateNav() {
-  for (var i = 0; i < pages.length; i++) {
-  //  $("#" + pages[i].element).css("height", 780 + "px"); // TEMP CHEET: tempLargestDiv
+  {
+      var distanceDown = $(document).scrollTop() / $(document).height();
+      //console.log(
+      //  "DistanceDown=" + distanceDown +
+      //  ", ScrollTop=" + $(document).scrollTop() +
+      //  ", DocumentHeight=" + $(document).height()
+      //);
 
-    var itemID = "#" + pages[i].name.toLowerCase() + "NavItem";
-    var itemLength = (pages[i].divHeight / $(document).height()) * $(window).width();
-    $(itemID).css("width", itemLength + "px");
-
-    $(itemID).css("width", ($(window).width() / pages.length) + "px");
+      $("#sliderProgress").css("left", (distanceDown * $(window).width()) + "px");
   }
 
-  var distanceDown = ($(document).scrollTop()) / $(document).height();
-  console.log(
-    "DistanceDown=" + distanceDown +
-    ", ScrollTop=" + $(document).scrollTop() +
-    ", DocumentHeight=" + $(document).height()
-  );
+  var currentPage = null;
 
-  $("#sliderProgress").css("width", ($(window).width() / pages.length) + "px");
-  $("#sliderProgress").css("left", (distanceDown * $(window).width()) + "px");
+  for (var i = 0; i < pages.length; i++) {
+    var itemID = "#navitem_" + getScroll(pages[i]);
+
+    if ($(window).width() > 720) {
+      // For American Individuality
+      $(itemID).css("width", ((pages[i].divHeight / pagesHeight) * $(window).width()) + "px");
+    } else {
+      // For North Korean Uniformity
+      $(itemID).css("width", ($(window).width() / pages.length) + "px");
+    }
+
+    if (
+      $("#sliderProgress").position().left >= $(itemID).position().left &&
+      $("#sliderProgress").position().left < $(itemID).position().left + $(itemID).width()
+    ) {
+      currentPage = pages[i];
+    }
+
+//    $(getScrollID(pages[i])).css("height", 780 + "px");
+  }
+
+  {
+    var sliderWidth = ((currentPage.divHeight / pagesHeight) * $(window).width()) + "px";
+
+    $("#sliderProgress").css("width", sliderWidth);
+    //$("#sliderProgress").animate({
+    //    width: sliderWidth,
+    //  }, 1000, function() {
+    //});
+  }
 }
 
 function scrollDown(current) {
@@ -159,18 +183,18 @@ function scrollDown(current) {
   }
 
   if (currentPos + 1 > pages.length) {
-    scrollTo(pages[pages.length].element);
+    scrollTo(pages[pages.length]);
   } else {
-    scrollTo(pages[currentPos + 1].element);
+    scrollTo(pages[currentPos + 1]);
   }
 }
 
-function scrollTo(element) {
-  var target = "#" + element;
+function scrollTo(object) {
+  var target = getScrollID(object);
   var $target = $(target);
 
-  if (!getObject(element).visible) {
-    reveal(getObject(element));
+  if (!object.visible) {
+    reveal(object);
   }
 
   $('html, body').stop().animate({
@@ -181,22 +205,19 @@ function scrollTo(element) {
 }
 
 function reveal(object) {
-  console.log("Activating " + object.element);
+  console.log("Activating " + object.name);
   object.visible = true;
 
-  $("#" + object.element).fadeIn();
-  $("#" + object.element).animate({
+  $(getScrollID(object)).animate({
     left: "0",
   }, 1000, function() {
   });
 }
 
-function getObject(element) {
-  for (var i = 0; i < pages.length; i++) {
-    if (pages[i].element === element) {
-      return pages[i];
-    }
-  }
+function getScrollID(object) {
+  return "#scroll_" + object.name.replace(/ /g,"_").toLowerCase();
+}
 
-  return null;
+function getScroll(object) {
+  return "scroll_" + object.name.replace(/ /g,"_").toLowerCase();
 }

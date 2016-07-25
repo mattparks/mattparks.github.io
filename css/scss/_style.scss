@@ -40,12 +40,14 @@ hr {
   z-index: 2;
   position: relative;
 
+  overflow: hidden;
+
   width: 100%;
   height: 100%;
 
   top: 0;
 
-  transition: none;
+//  transition: none;
 
   .scroll {
     z-index: 3;
@@ -126,13 +128,27 @@ hr {
   .scrollLeft {
     @extend .scroll;
     left: 200%;
-    display: none;
+
+    ::before {
+
+    }
+
+    ::after {
+
+    }
   }
 
   .scrollRight {
     @extend .scroll;
     left: -100%;
-    display: none;
+
+    ::before {
+
+    }
+
+    ::after {
+
+    }
   }
 }
 

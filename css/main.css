@@ -1149,7 +1149,7 @@ body { background-color: #404456; }
 
 hr { border: 0; height: 1px; background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.75), transparent); }
 
-.main { z-index: 2; position: relative; width: 100%; height: 100%; top: 0; transition: none; }
+.main { z-index: 2; position: relative; overflow: hidden; width: 100%; height: 100%; top: 0; }
 
 .main .scroll, .main .scrollLeft, .main .scrollRight { z-index: 3; position: relative; background-color: #404456; padding-bottom: 150px; }
 
@@ -1167,9 +1167,9 @@ hr { border: 0; height: 1px; background-image: linear-gradient(to right, transpa
 
 .main .scroll .moveRight, .main .scrollLeft .moveRight, .main .scrollRight .moveRight { -webkit-transform: skewY(2deg); -moz-transform: skewY(2deg); -ms-transform: skewY(2deg); -o-transform: skewY(2deg); transform: skewY(2deg); }
 
-.main .scrollLeft { left: 200%; display: none; }
+.main .scrollLeft { left: 200%; }
 
-.main .scrollRight { left: -100%; display: none; }
+.main .scrollRight { left: -100%; }
 
 @media only screen and (max-width: 800px) { .main .scroll .content h1, .main .scrollLeft .content h1, .main .scrollRight .content h1 { text-align: center; }
   .main .scroll .content p, .main .scrollLeft .content p, .main .scrollRight .content p { text-align: center; }
@@ -1268,7 +1268,7 @@ hr { border: 0; height: 1px; background-image: linear-gradient(to right, transpa
 
 #navbar { z-index: 4; position: fixed; top: -50px; left: 0; right: 0; width: 100%; height: 50px; background: rgba(51, 51, 51, 0.8); }
 
-#cssmenu, #cssmenu ul, #cssmenu ul li, #cssmenu ul li a, #cssmenu #menu-button { margin: 0; padding: 0; border: 0; list-style: none; line-height: 1; display: block; position: relative; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+#cssmenu, #cssmenu ul, #cssmenu ul li, #cssmenu ul li a, #cssmenu #menu-button { margin: 0; padding: 0; border: 0; list-style: none; line-height: 1; display: block; position: relative; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; cursor: pointer; }
 
 #cssmenu { z-index: 6; position: fixed; top: -50px; left: 0; right: 0; width: 100%; height: 50px; background: transparent; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 
