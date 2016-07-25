@@ -1145,36 +1145,27 @@ html, body { color: #404040; }
 
 body { background-color: #404456; }
 
-#background { z-index: 1; width: 100%; position: fixed; top: 0; left: 0; -webkit-filter: blur(5px); filter: blur(5px); }
-
 hr { border: 0; height: 1px; background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.75), transparent); }
+
+#background { z-index: 1; width: 100%; position: fixed; top: 0; left: 0; -webkit-filter: blur(5px); filter: blur(5px); }
 
 .main { z-index: 2; position: relative; overflow: hidden; width: 100%; height: 100%; top: 0; }
 
-.main .scroll, .main .scrollLeft, .main .scrollRight { z-index: 3; position: relative; background-color: #404456; padding-bottom: 150px; }
+.scroll { z-index: 3; position: relative; background-color: #404456; }
 
-.main .scroll .content, .main .scrollLeft .content, .main .scrollRight .content { width: 100%; padding: 2%; line-height: 25px; overflow: hidden; display: block; background-color: #fafafa; }
+.scroll .content { width: 100%; padding: 2%; line-height: 25px; overflow: hidden; display: block; background-color: #fafafa; }
 
-.main .scroll .content .right, .main .scrollLeft .content .right, .main .scrollRight .content .right { z-index: 3; position: relative; width: 61%; float: right; padding: 1%; }
+.scroll .content .right { z-index: 3; position: relative; width: 61%; float: right; padding: 1%; }
 
-.main .scroll .content .left, .main .scrollLeft .content .left, .main .scrollRight .content .left { z-index: 3; position: relative; width: 39%; float: left; padding: 1%; }
+.scroll .content .left { z-index: 3; position: relative; width: 39%; float: left; padding: 1%; }
 
-.main .scroll .move, .main .scrollLeft .move, .main .scrollRight .move, .main .scroll .moveLeft, .main .scrollLeft .moveLeft, .main .scrollRight .moveLeft, .main .scroll .moveRight, .main .scrollLeft .moveRight, .main .scrollRight .moveRight { position: relative; width: 100%; height: 49px; line-height: 49px; top: 49px; color: #fafafa; background: rgba(51, 51, 51, 0.8); }
+.scroll .move { position: relative; width: 100%; height: 49px; line-height: 49px; color: #fafafa; background: rgba(51, 51, 51, 0.8); }
 
-.main .scroll .move img, .main .scrollLeft .move img, .main .scrollRight .move img, .main .scroll .moveLeft img, .main .scrollLeft .moveLeft img, .main .scrollRight .moveLeft img, .main .scroll .moveRight img, .main .scrollLeft .moveRight img, .main .scrollRight .moveRight img { z-index: 5; position: relative; top: 9px; width: 31px; height: 31px; cursor: pointer; opacity: 0.75; filter: alpha(opacity=75); }
+.scroll .move img { z-index: 5; position: relative; top: 9px; width: 31px; height: 31px; cursor: pointer; opacity: 0.75; filter: alpha(opacity=75); }
 
-.main .scroll .moveLeft, .main .scrollLeft .moveLeft, .main .scrollRight .moveLeft { -webkit-transform: skewY(-2deg); -moz-transform: skewY(-2deg); -ms-transform: skewY(-2deg); -o-transform: skewY(-2deg); transform: skewY(-2deg); }
-
-.main .scroll .moveRight, .main .scrollLeft .moveRight, .main .scrollRight .moveRight { -webkit-transform: skewY(2deg); -moz-transform: skewY(2deg); -ms-transform: skewY(2deg); -o-transform: skewY(2deg); transform: skewY(2deg); }
-
-.main .scrollLeft { left: 200%; }
-
-.main .scrollRight { left: -100%; }
-
-@media only screen and (max-width: 800px) { .main .scroll .content h1, .main .scrollLeft .content h1, .main .scrollRight .content h1 { text-align: center; }
-  .main .scroll .content p, .main .scrollLeft .content p, .main .scrollRight .content p { text-align: center; }
-  .main .scroll .content .right, .main .scrollLeft .content .right, .main .scrollRight .content .right { position: static; width: 100%; float: center; padding: 1%; }
-  .main .scroll .content .left, .main .scrollLeft .content .left, .main .scrollRight .content .left { position: static; width: 100%; float: center; padding: 1%; } }
+@media only screen and (max-width: 800px) { .scroll .content h1, .scroll .content p { text-align: center; }
+  .scroll .content .right { position: static; width: 100%; float: center; padding: 1%; }
+  .scroll .content .left { position: static; width: 100%; float: center; padding: 1%; } }
 
 .valign-wrapper { display: flex; align-items: center; }
 

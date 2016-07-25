@@ -20,6 +20,12 @@ body {
   background-color: #404456;
 }
 
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
 #background {
   z-index: 1;
   width: 100%;
@@ -28,12 +34,6 @@ body {
   left: 0;
 	-webkit-filter: blur(5px);
 	filter: blur(5px);
-}
-
-hr {
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
 .main {
@@ -46,137 +46,82 @@ hr {
   height: 100%;
 
   top: 0;
+}
 
-//  transition: none;
+.scroll {
+  z-index: 3;
+  position: relative;
+  background-color: #404456;
 
-  .scroll {
-    z-index: 3;
-    position: relative;
-    background-color: #404456;
-    padding-bottom: 150px;
+  .content {
+    width: 100%;
+    padding: 2%;
+    line-height: 25px;
+    overflow: hidden;
+    display: block;
 
-    .content {
-      width: 100%;
-      padding: 2%;
-      line-height: 25px;
-      overflow: hidden;
-      display: block;
+    background-color: $background-colour;
 
-      background-color: $background-colour;
-
-      .right {
-        z-index: 3;
-        position: relative;
-        width: 61%;
-        float: right;
-        padding: 1%;
-      }
-
-      .left {
-        z-index: 3;
-        position: relative;
-        width: 39%;
-        float: left;
-        padding: 1%;
-      }
-    }
-
-    .move {
+    .right {
+      z-index: 3;
       position: relative;
-
-      width: 100%;
-      height: 49px;
-
-      line-height: 49px;
-
-      top: 49px;
-
-      color: $background-colour;
-      background:rgba(51, 51, 51, 0.8);
-
-      img {
-        z-index: 5;
-        position: relative;
-        top: 9px;
-        width: 31px;
-        height: 31px;
-        cursor: pointer;
-        opacity: 0.75;
-        filter: alpha(opacity=75);
-      }
+      width: 61%;
+      float: right;
+      padding: 1%;
     }
 
-    .moveLeft {
-      @extend .move;
-      -webkit-transform: skewY(-2deg);
-      -moz-transform: skewY(-2deg);
-      -ms-transform: skewY(-2deg);
-      -o-transform: skewY(-2deg);
-      transform: skewY(-2deg);
-    }
-
-    .moveRight {
-      @extend .move;
-      -webkit-transform: skewY(2deg);
-      -moz-transform: skewY(2deg);
-      -ms-transform: skewY(2deg);
-      -o-transform: skewY(2deg);
-      transform: skewY(2deg);
+    .left {
+      z-index: 3;
+      position: relative;
+      width: 39%;
+      float: left;
+      padding: 1%;
     }
   }
 
-  .scrollLeft {
-    @extend .scroll;
-    left: 200%;
+  .move {
+    position: relative;
 
-    ::before {
+    width: 100%;
+    height: 49px;
 
-    }
+    line-height: 49px;
 
-    ::after {
+    color: $background-colour;
+    background:rgba(51, 51, 51, 0.8);
 
-    }
-  }
-
-  .scrollRight {
-    @extend .scroll;
-    left: -100%;
-
-    ::before {
-
-    }
-
-    ::after {
-
+    img {
+      z-index: 5;
+      position: relative;
+      top: 9px;
+      width: 31px;
+      height: 31px;
+      cursor: pointer;
+      opacity: 0.75;
+      filter: alpha(opacity=75);
     }
   }
 }
 
 @media only screen and (max-width: 800px) {
-  .main {
-    .scroll {
-      .content {
-        h1 {
-          text-align: center;
-        }
+  .scroll {
+    .content {
+      h1, p {
+        text-align: center;
+      }
 
-        p {
-          text-align: center;
-        }
+      .right {
+        position: static;
+        width: 100%;
+        float: center;
+        padding: 1%;
+      }
 
-        .right {
-          position: static;
-          width: 100%;
-          float: center;
-          padding: 1%;
-        }
-
-        .left {
-          position: static;
-          width: 100%;
-          float: center;
-          padding: 1%;
-        }
+      .left {
+        position: static;
+        width: 100%;
+        float: center;
+        padding: 1%;
       }
     }
   }
@@ -226,6 +171,7 @@ hr {
   box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
 }
 
+// Hoverable
 .hoverable {
   transition: box-shadow .25s;
   box-shadow: 0;

@@ -66,6 +66,8 @@ function loadNext(i) {
     };
     li.appendChild(a);
 
+    $(getScrollID(pages[i])).css("left", i % 2 ? "-100%" : "200%")
+
     // Register next page, or end.
     var nextI = i + 1;
 
@@ -122,53 +124,17 @@ function updatePages() {
     }
 
     pagesHeight += pages[i].divHeight;
-    $(getScrollID(pages[i])).css("padding-bottom", moveHeight + 30 + "px");
   }
 }
 
 function updateNav() {
-  {
-      var distanceDown = $(document).scrollTop() / $(document).height();
-      //console.log(
-      //  "DistanceDown=" + distanceDown +
-      //  ", ScrollTop=" + $(document).scrollTop() +
-      //  ", DocumentHeight=" + $(document).height()
-      //);
-
-      $("#sliderProgress").css("left", (distanceDown * $(window).width()) + "px");
-  }
-
-  var currentPage = null;
+  var distanceDown = $(document).scrollTop() / $(document).height();
+  $("#sliderProgress").css("left", (distanceDown * $(window).width()) + "px");
+  $("#sliderProgress").css("width", ($(window).width() / pages.length) + "px");
 
   for (var i = 0; i < pages.length; i++) {
     var itemID = "#navitem_" + getScroll(pages[i]);
-
-    if ($(window).width() > 720) {
-      // For American Individuality
-      $(itemID).css("width", ((pages[i].divHeight / pagesHeight) * $(window).width()) + "px");
-    } else {
-      // For North Korean Uniformity
-      $(itemID).css("width", ($(window).width() / pages.length) + "px");
-    }
-
-    if (
-      $("#sliderProgress").position().left >= $(itemID).position().left &&
-      $("#sliderProgress").position().left < $(itemID).position().left + $(itemID).width()
-    ) {
-      currentPage = pages[i];
-    }
-
-//    $(getScrollID(pages[i])).css("height", 780 + "px");
-  }
-
-  {
-    var sliderWidth = ((currentPage.divHeight / pagesHeight) * $(window).width()) + "px";
-
-    $("#sliderProgress").css("width", sliderWidth);
-    //$("#sliderProgress").animate({
-    //    width: sliderWidth,
-    //  }, 1000, function() {
-    //});
+    $(itemID).css("width", ($(window).width() / pages.length) + "px");
   }
 }
 
