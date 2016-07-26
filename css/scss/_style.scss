@@ -49,9 +49,12 @@ hr {
 }
 
 .scroll {
-  z-index: 3;
+  z-index: 2;
   position: relative;
   background-color: #404456;
+
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
 
   .content {
     width: 100%;
@@ -90,7 +93,10 @@ hr {
   line-height: 49px;
 
   color: $background-colour;
-  background:rgba(51, 51, 51, 0.8);
+  background: rgba(51, 51, 51, 0.8);
+
+    transform: skewY(-2.0deg);
+    transform-origin: 100%;
 
   img {
     z-index: 5;

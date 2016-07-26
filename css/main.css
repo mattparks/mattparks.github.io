@@ -1151,7 +1151,7 @@ hr { border: 0; height: 1px; background-image: linear-gradient(to right, transpa
 
 .main { z-index: 2; position: relative; overflow: hidden; width: 100%; height: 100%; top: 0; }
 
-.scroll { z-index: 3; position: relative; background-color: #404456; }
+.scroll { z-index: 2; position: relative; background-color: #404456; -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%); clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%); }
 
 .scroll .content { width: 100%; padding: 2%; line-height: 25px; overflow: hidden; display: block; background-color: #fafafa; }
 
@@ -1159,7 +1159,7 @@ hr { border: 0; height: 1px; background-image: linear-gradient(to right, transpa
 
 .scroll .content .left { z-index: 3; position: relative; width: 39%; float: left; padding: 1%; }
 
-.move { z-index: 3; position: relative; width: 100%; height: 49px; line-height: 49px; color: #fafafa; background: rgba(51, 51, 51, 0.8); }
+.move { z-index: 3; position: relative; width: 100%; height: 49px; line-height: 49px; color: #fafafa; background: rgba(51, 51, 51, 0.8); transform: skewY(-2deg); transform-origin: 100%; }
 
 .move img { z-index: 5; position: relative; top: 9px; width: 31px; height: 31px; cursor: pointer; opacity: 0.75; filter: alpha(opacity=75); }
 

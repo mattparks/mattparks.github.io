@@ -14,7 +14,13 @@ var pages = [
   new Page(3, "./html/_history.html", "History"),
   new Page(4, "./html/_contact.html", "Contact"),
 ];
-var backgrounds = 5;
+var backgrounds = [
+  "./img/slideshow/1.jpg",
+  "./img/slideshow/2.jpg",
+  "./img/slideshow/3.jpg",
+  "./img/slideshow/4.jpg",
+  "./img/slideshow/5.jpg",
+];
 var pagesHeight = 0;
 
 $(document).ready(function() {
@@ -77,11 +83,11 @@ function loadNext(i) {
 }
 
 function changeImage(i) {
-  $("#background").attr("src", "./img/slideshow/" + i + ".jpg");
+  $("#background").attr("src", backgrounds[i]);
 
   var nextI = i + 1;
 
-  if (nextI >= 5) {
+  if (nextI >= backgrounds.length) {
     nextI = 1;
   }
 
