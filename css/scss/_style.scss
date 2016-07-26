@@ -53,8 +53,23 @@ hr {
   position: relative;
   background-color: #404456;
 
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+  &:before{
+    content:'';
+    position:absolute;
+    bottom: 100%;
+    border-left: 100vw solid transparent; // This not work.
+    border-bottom: 80px solid $background-colour;
+  }
+
+  &:after{
+    content:'';
+    position:absolute;
+    top: 100%;
+    border-right: 100vw solid transparent; // This not work.
+    border-top: 80px solid $background-colour;
+  }
+
+  margin: 49px 0;
 
   .content {
     width: 100%;
@@ -87,6 +102,7 @@ hr {
   z-index: 3;
   position: relative;
 
+  top: -49px;
   width: 100%;
   height: 49px;
 
@@ -95,8 +111,8 @@ hr {
   color: $background-colour;
   background: rgba(51, 51, 51, 0.8);
 
-    transform: skewY(-2.0deg);
-    transform-origin: 100%;
+  transform: skewY(-2.0deg); // This not work.
+  transform-origin: 100%;
 
   img {
     z-index: 5;
