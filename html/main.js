@@ -4,6 +4,7 @@ function Page (id, path, name) {
   this.name = name;
   this.visible = false;
   this.divHeight = 0;
+  this.progressInto = 0;
 }
 
 var pages = [
@@ -23,6 +24,7 @@ $(document).ready(function() {
 
   setTimeout(function() {
     $("#loader").fadeOut();
+    $("body").append('<script src="./js/prism.js"></script>');
   }, 750);
 
   setTimeout(function() {
@@ -32,10 +34,6 @@ $(document).ready(function() {
   }, 1500);
 
   setTimeout(function() {
-    $("#sliderProgress").animate({
-      top: "0",
-    }, 1000, function() {
-    });
     $("#navbar").animate({
       top: "0",
     }, 1000, function() {
@@ -56,7 +54,7 @@ function loadNext(i) {
 
     // Load navbar
     var li = document.createElement('li');
-    li.id = "navitem_" + getScroll(pages[i]);
+    li.id = "navitem_" + pages[i].name.toLowerCase();
     $(".nav-menu-items").append(li);
     var a = document.createElement('a');
     var linkText = document.createTextNode(pages[i].name);
@@ -117,8 +115,9 @@ function updatePages() {
 
   for (var i = 0; i < pages.length; i++) {
     pages[i].divHeight = $(getScrollID(pages[i])).height();
+    pages[i].progressInto = pageBottom - pagesHeight;
 
-    if (!pages[i].visible && pagesHeight <= pageBottom) {
+    if (!pages[i].visible && pages[i].progressInto >= 0) {
       reveal(pages[i]);
     }
 
@@ -127,12 +126,11 @@ function updatePages() {
 }
 
 function updateNav() {
-  var distanceDown = $(document).scrollTop() / $(document).height();
-  $("#sliderProgress").css("left", (distanceDown * $(window).width()) + "px");
-  $("#sliderProgress").css("width", ($(window).width() / pages.length) + "px");
-
   for (var i = 0; i < pages.length; i++) {
     $(getNavitemID(pages[i])).css("width", ($(window).width() / pages.length) + "px");
+    var progress = pages[i].progressInto / pages[i].divHeight;
+    if (progress < 0.0) { progress = 0.0; } else if (progress > 1.0) { progress = 1.0; }
+    $(getNavitemID(pages[i])).css("background-color", "rgba(" + Math.round(66 * progress) + "," + Math.round(165 * progress) + "," + Math.round(245 * progress) + "," + (0.8 * progress) + ")");
   }
 }
 

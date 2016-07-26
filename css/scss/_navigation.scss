@@ -1,16 +1,3 @@
-#sliderProgress {
-  z-index: 5;
-  position: fixed;
-
-  top: -50px;
-  left: -250px;
-
-  height: 50px;
-  width: 250px;
-
-  background:rgba($primary-colour, 0.8);
-}
-
 #navbar {
   z-index: 4;
   position: fixed;
@@ -26,6 +13,7 @@
 }
 
 #cssmenu, #cssmenu ul, #cssmenu ul li, #cssmenu ul li a, #cssmenu #menu-button {
+  height: 100%;
   margin: 0;
   padding: 0;
   border: 0;
@@ -58,15 +46,6 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-#cssmenu:after, #cssmenu > ul:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
 }
 
 #cssmenu > ul > li {
