@@ -49,7 +49,7 @@ hr {
 }
 
 .scroll {
-  z-index: 2;
+  z-index: 3;
   position: relative;
   background-color: #404456;
 
@@ -57,7 +57,7 @@ hr {
     content:'';
     position:absolute;
     bottom: 100%;
-    border-left: 100vw solid transparent; // This not work.
+    border-left: 100vw solid transparent;
     border-bottom: 80px solid $background-colour;
   }
 
@@ -65,11 +65,9 @@ hr {
     content:'';
     position:absolute;
     top: 100%;
-    border-right: 100vw solid transparent; // This not work.
+    border-right: 100vw solid transparent;
     border-top: 80px solid $background-colour;
   }
-
-  margin: 49px 0;
 
   .content {
     width: 100%;
@@ -99,30 +97,33 @@ hr {
 }
 
 .move {
-  z-index: 3;
+  z-index: 2;
   position: relative;
 
-  top: -49px;
+  top: 0px;
   width: 100%;
-  height: 49px;
+  height: 148px;
 
   line-height: 49px;
+  font-size: 17px;
 
   color: $background-colour;
   background: rgba(51, 51, 51, 0.8);
 
-  transform: skewY(-2.0deg); // This not work.
-  transform-origin: 100%;
+  .moveBody {
+    transform: skewY(-2.0deg);
+    transform-origin: 100%;
 
-  img {
-    z-index: 5;
-    position: relative;
-    top: 9px;
-    width: 31px;
-    height: 31px;
-    cursor: pointer;
-    opacity: 0.75;
-    filter: alpha(opacity=75);
+    img {
+      z-index: 5;
+      position: relative;
+      top: 9px;
+      width: 31px;
+      height: 31px;
+      cursor: pointer;
+      opacity: 0.75;
+      filter: alpha(opacity=75);
+    }
   }
 }
 
