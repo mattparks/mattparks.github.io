@@ -77,8 +77,7 @@ function loadNext(i) {
     };
     li.appendChild(a);
 
-    $(getScrollID(pages[i])).css("left", i % 2 ? "-100%" : "200%");
-    $(getMoveID(pages[i])).css("left", i % 2 ? "-100%" : "200%");
+    $("#" + getScroll(pages[i])).css("left", i % 2 ? "-100%" : "200%");
 
     // Register next page, or end.
     var nextI = i + 1;
@@ -135,7 +134,7 @@ function updatePages() {
   pagesHeight = 0;
 
   for (var i = 0; i < pages.length; i++) {
-    pages[i].divHeight = $(getScrollID(pages[i])).height();
+    pages[i].divHeight = $("#" + getScroll(pages[i])).height();
     pages[i].progressInto = pageBottom - pagesHeight;
 
     if (!pages[i].visible && pages[i].progressInto >= 0) {
@@ -148,7 +147,7 @@ function updatePages() {
 
 function updateNav() {
   for (var i = 0; i < pages.length; i++) {
-    $(getNavitemID(pages[i])).css("width", ($(window).width() / pages.length) + "px");
+    $("#" + getNavitem(pages[i])).css("width", ($(window).width() / pages.length) + "px");
     var progress = pages[i].progressInto / pages[i].divHeight;
 
     if (progress < 0.0) {
@@ -157,7 +156,7 @@ function updateNav() {
       progress = 1.0;
     }
 
-    $(getNavitemID(pages[i])).css("background-color", "rgba(" + Math.round(66 * progress) + "," + Math.round(165 * progress) + "," + Math.round(245 * progress) + "," + (0.8 * progress) + ")");
+    $("#" + getNavitem(pages[i])).css("background-color", "rgba(" + Math.round(66 * progress) + "," + Math.round(165 * progress) + "," + Math.round(245 * progress) + "," + (0.8 * progress) + ")");
   }
 }
 
@@ -187,7 +186,7 @@ function scrollDown(current) {
 }
 
 function scrollTo(object) {
-  var target = getScrollID(object);
+  var target = "#" + getScroll(object);
   var $target = $(target);
 
   if (!object.visible) {
@@ -205,11 +204,7 @@ function reveal(object) {
   console.log("Activating " + object.name);
   object.visible = true;
 
-  $(getScrollID(object)).animate({
-    left: "0",
-  }, 1000, function() {
-  });
-  $(getMoveID(object)).animate({
+  $("#" + getScroll(object)).animate({
     left: "0",
   }, 1000, function() {
   });
@@ -220,24 +215,8 @@ function reveal(object) {
   }, 1000);
 }
 
-function getScrollID(object) {
-  return "#" + getScroll(object);
-}
-
-function getMoveID(object) {
-  return "#" + getMove(object);
-}
-
-function getNavitemID(object) {
-  return "#" + getNavitem(object);
-}
-
 function getScroll(object) {
   return "scroll_" + object.name.replace(/ /g,"_").toLowerCase();
-}
-
-function getMove(object) {
-  return "move_" + object.name.replace(/ /g,"_").toLowerCase();
 }
 
 function getNavitem(object) {

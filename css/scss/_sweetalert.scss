@@ -221,12 +221,17 @@ body.stop-scrolling {
 
     background-color: $btnBlue;
     color: white;
-    border: none;
+      border: $button-border;
+      border-radius: $button-radius;
+      height: $button-height;
+      line-height: $button-height;
+      outline: 0;
+      padding: $button-padding;
+      text-transform: uppercase;
+      vertical-align: middle;
+      // Gets rid of tap active state
+      -webkit-tap-highlight-color: transparent;
     box-shadow: none;
-    font-size: 17px;
-    font-weight: 500;
-    -webkit-border-radius: 4px;
-    border-radius: 5px;
     padding: 10px 32px;
     margin: 26px 5px 0 5px;
     cursor: pointer;

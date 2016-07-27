@@ -1935,21 +1935,15 @@ hr { border: 0; height: 1px; background-image: linear-gradient(to right, transpa
 
 .scroll { z-index: 3; position: relative; background-color: #404456; }
 
-.scroll:before { content: ''; position: absolute; bottom: 100%; border-left: 100vw solid transparent; border-bottom: 80px solid #fafafa; }
-
-.scroll:after { content: ''; position: absolute; top: 100%; border-right: 100vw solid transparent; border-top: 80px solid #fafafa; }
-
 .scroll .content { width: 100%; padding: 2%; line-height: 25px; overflow: hidden; display: block; background-color: #fafafa; }
 
 .scroll .content .left { z-index: 3; position: relative; width: 39%; float: left; padding: 1%; }
 
 .scroll .content .right { z-index: 3; position: relative; width: 61%; float: right; padding: 1%; }
 
-.move { z-index: 2; position: relative; top: 0px; width: 100%; height: 148px; line-height: 99px; font-size: 17px; color: #fafafa; background: rgba(51, 51, 51, 0.8); }
+.scroll .move { z-index: 2; position: relative; top: 0px; width: 100%; height: 80px; line-height: 80px; font-size: 17px; color: #fafafa; background: rgba(51, 51, 51, 0.8); }
 
-.move .moveBody { z-index: 4; position: relative; transform: skewY(-2deg); transform-origin: 100%; }
-
-.move .moveBody img { z-index: 5; position: relative; top: 9px; width: 31px; height: 31px; cursor: pointer; opacity: 0.75; filter: alpha(opacity=75); }
+.scroll .move img { z-index: 5; position: relative; width: 31px; height: 31px; cursor: pointer; opacity: 0.75; filter: alpha(opacity=75); }
 
 @media only screen and (max-width: 800px) { .scroll .content h1, .scroll .content p { text-align: center; }
   .scroll .content .right { position: static; width: 100%; float: center; padding: 1%; }
@@ -2568,7 +2562,7 @@ body.stop-scrolling { height: 100%; }
 
 .sweet-alert .la-ball-fall { position: absolute; left: 50%; top: 50%; margin-left: -27px; margin-top: 4px; opacity: 0; visibility: hidden; }
 
-.sweet-alert button { background-color: #8CD4F5; color: white; border: none; box-shadow: none; font-size: 17px; font-weight: 500; -webkit-border-radius: 4px; border-radius: 5px; padding: 10px 32px; margin: 26px 5px 0 5px; cursor: pointer; }
+.sweet-alert button { background-color: #8CD4F5; color: white; border: none; border-radius: 2px; height: 36px; line-height: 36px; outline: 0; padding: 0 2rem; text-transform: uppercase; vertical-align: middle; -webkit-tap-highlight-color: transparent; box-shadow: none; padding: 10px 32px; margin: 26px 5px 0 5px; cursor: pointer; }
 
 .sweet-alert button:focus { outline: none; box-shadow: 0 0 2px rgba(128, 179, 235, 0.5), inset 0 0 0 1px rgba(0, 0, 0, 0.05); }
 
@@ -3027,7 +3021,7 @@ body.stop-scrolling { height: 100%; }
 
 .img:after { content: ''; display: inline-block; position: absolute; top: -18em; left: 20em; width: 30em; height: 54em; -webkit-transform: rotate(-22.5deg); background: rgba(255, 255, 255, 0.2); background: linear-gradient(22.5deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.07)); }
 
-#skills span { top: -38px; left: 2%; position: relative; color: #fff; font-size: 1.4em; line-height: 30px; }
+#skills span { top: -38px; left: 2%; position: relative; color: #222; font-size: 1.4em; line-height: 30px; }
 
 progress { background-color: #f3f3f3; border: 0; height: 40px; width: 100%; }
 

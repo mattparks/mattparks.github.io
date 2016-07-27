@@ -1,5 +1,5 @@
 <div id="scroll_contact" class="scroll">
-  <div id="content_contact" class="content contact-form">
+  <div class="content">
     <h1>Contact Me</h1>
     <hr/><br/>
 
@@ -34,12 +34,10 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
     </div>
   </div>
-</div>
 
-<div id="move_contact" class="move">
-  <div class="moveBody">
+  <div class="move">
     <center>
-      <p>Copyright &copy 2016 Matthew Albrecht. | All Rights Reserved.</p>
+      <p>Copyright &copy 2016 Matthew Albrecht. | All Rights Reserved. <a href="https://github.com/mattparks/mattparks.github.io">Github</a>.</p>
     </center>
   </div>
 </div>
@@ -51,6 +49,14 @@
     var subject = $("#subject").value;
     var textarea = $("#textarea").value;
   //  window.open('mailto:mattparks5855@gmail.com?subject=subject&body=body');
+
+    swal({
+      title: "Thank you for submitting your form.",
+      text: "I will respond to your form in less than 3 days.",
+      type: "success",
+      confirmButtonColor: "#2196F3",
+      showConfirmButton: true
+    });
   }
 
   function clearForms() {

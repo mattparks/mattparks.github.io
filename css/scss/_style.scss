@@ -65,22 +65,6 @@ hr {
   position: relative;
   background-color: #404456;
 
-  &:before {
-    content:'';
-    position:absolute;
-    bottom: 100%;
-    border-left: 100vw solid transparent;
-    border-bottom: 80px solid $background-colour;
-  }
-
-  &:after {
-    content:'';
-    position:absolute;
-    top: 100%;
-    border-right: 100vw solid transparent;
-    border-top: 80px solid $background-colour;
-  }
-
   .content {
     width: 100%;
     padding: 2%;
@@ -106,34 +90,24 @@ hr {
       padding: 1%;
     }
   }
-}
 
-.move {
-  z-index: 2;
-  position: relative;
-
-  top: 0px;
-  width: 100%;
-  height: 148px;
-
-  line-height: 99px;
-
-  font-size: 17px;
-
-  color: $background-colour;
-  background: rgba(51, 51, 51, 0.8);
-
-  .moveBody {
-    z-index: 4;
+  .move {
+    z-index: 2;
     position: relative;
 
-    transform: skewY(-2.0deg);
-    transform-origin: 100%;
+    top: 0px;
+    width: 100%;
+    height: 80px;
+
+    line-height: 80px;
+    font-size: 17px;
+
+    color: $background-colour;
+    background: rgba(51, 51, 51, 0.8);
 
     img {
       z-index: 5;
       position: relative;
-      top: 9px;
       width: 31px;
       height: 31px;
       cursor: pointer;
