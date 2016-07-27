@@ -1,3 +1,4 @@
+
 //output:../main.css
 @charset "UTF-8";
 @import "_colour";
@@ -151,6 +152,8 @@ $interval-size: $range / $intervals !default;
 @import "_style";
 @import "_loader";
 @import "_scrollbar";
+@import "_timeline";
+@import "_contact";
 @import "_navigation";
 @import "_dropdown";
 @import "_buttons";

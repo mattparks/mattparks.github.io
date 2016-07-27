@@ -30,6 +30,7 @@ $(document).ready(function() {
 
   setTimeout(function() {
     $("#loader").fadeOut();
+    loadTimeline();
     $("body").append('<script src="./js/prism.js"></script>');
   }, 750);
 
@@ -104,15 +105,23 @@ function changeImage(i) {
   }, 10500);
 }
 
+function loadTimeline() {
+  $('.cd-timeline-block').each(function() {
+    if ($(this).offset().top > $(window).scrollTop() + $(window).height() * 0.75) {
+      $(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+    }
+  });
+}
+
 $(window).resize(function() {
   updatePages();
   updateNav();
 });
 
-
 $(window).on('scroll', function() {
   updatePages();
   updateNav();
+  updateTimeline();
 });
 
 function updatePages() {
@@ -135,9 +144,23 @@ function updateNav() {
   for (var i = 0; i < pages.length; i++) {
     $(getNavitemID(pages[i])).css("width", ($(window).width() / pages.length) + "px");
     var progress = pages[i].progressInto / pages[i].divHeight;
-    if (progress < 0.0) { progress = 0.0; } else if (progress > 1.0) { progress = 1.0; }
+
+    if (progress < 0.0) {
+      progress = 0.0;
+    } else if (progress > 1.0) {
+      progress = 1.0;
+    }
+
     $(getNavitemID(pages[i])).css("background-color", "rgba(" + Math.round(66 * progress) + "," + Math.round(165 * progress) + "," + Math.round(245 * progress) + "," + (0.8 * progress) + ")");
   }
+}
+
+function updateTimeline() {
+  $('.cd-timeline-block').each(function() {
+    if ($(this).offset().top <= $(window).scrollTop() + $(window).height() * 0.75 && $(this).find('.cd-timeline-img').hasClass('is-hidden')) {
+      $(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+    }
+  });
 }
 
 function scrollDown(current) {

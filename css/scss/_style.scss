@@ -53,7 +53,7 @@ hr {
   position: relative;
   background-color: #404456;
 
-  &:before{
+  &:before {
     content:'';
     position:absolute;
     bottom: 100%;
@@ -61,7 +61,7 @@ hr {
     border-bottom: 80px solid $background-colour;
   }
 
-  &:after{
+  &:after {
     content:'';
     position:absolute;
     top: 100%;
@@ -104,13 +104,16 @@ hr {
   width: 100%;
   height: 148px;
 
-  line-height: 49px;
+  line-height: 99px;
   font-size: 17px;
 
   color: $background-colour;
   background: rgba(51, 51, 51, 0.8);
 
   .moveBody {
+    z-index: 4;
+    position: relative;
+
     transform: skewY(-2.0deg);
     transform-origin: 100%;
 
