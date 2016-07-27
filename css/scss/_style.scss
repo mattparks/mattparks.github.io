@@ -53,21 +53,21 @@ hr {
   position: relative;
   background-color: #404456;
 
-  &:before {
-    content:'';
-    position:absolute;
-    bottom: 100%;
-    border-left: 100vw solid transparent;
-    border-bottom: 80px solid $background-colour;
-  }
+//  &:before {
+//    content:'';
+//    position:absolute;
+//    bottom: 100%;
+//    border-left: 100vw solid transparent;
+//    border-bottom: 80px solid $background-colour;
+//  }
 
-  &:after {
-    content:'';
-    position:absolute;
-    top: 100%;
-    border-right: 100vw solid transparent;
-    border-top: 80px solid $background-colour;
-  }
+//  &:after {
+//    content:'';
+//    position:absolute;
+//    top: 100%;
+//    border-right: 100vw solid transparent;
+//    border-top: 80px solid $background-colour;
+//  }
 
   .content {
     width: 100%;
@@ -102,9 +102,10 @@ hr {
 
   top: 0px;
   width: 100%;
-  height: 148px;
+  height: 49px; // 148px
 
-  line-height: 99px;
+  line-height: 49px; // 99px
+
   font-size: 17px;
 
   color: $background-colour;
@@ -114,8 +115,8 @@ hr {
     z-index: 4;
     position: relative;
 
-    transform: skewY(-2.0deg);
-    transform-origin: 100%;
+  //  transform: skewY(-2.0deg);
+  //  transform-origin: 100%;
 
     img {
       z-index: 5;

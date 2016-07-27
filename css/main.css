@@ -1153,19 +1153,15 @@ hr { border: 0; height: 1px; background-image: linear-gradient(to right, transpa
 
 .scroll { z-index: 3; position: relative; background-color: #404456; }
 
-.scroll:before { content: ''; position: absolute; bottom: 100%; border-left: 100vw solid transparent; border-bottom: 80px solid #fafafa; }
-
-.scroll:after { content: ''; position: absolute; top: 100%; border-right: 100vw solid transparent; border-top: 80px solid #fafafa; }
-
 .scroll .content { width: 100%; padding: 2%; line-height: 25px; overflow: hidden; display: block; background-color: #fafafa; }
 
 .scroll .content .right { z-index: 3; position: relative; width: 61%; float: right; padding: 1%; }
 
 .scroll .content .left { z-index: 3; position: relative; width: 39%; float: left; padding: 1%; }
 
-.move { z-index: 2; position: relative; top: 0px; width: 100%; height: 148px; line-height: 99px; font-size: 17px; color: #fafafa; background: rgba(51, 51, 51, 0.8); }
+.move { z-index: 2; position: relative; top: 0px; width: 100%; height: 49px; line-height: 49px; font-size: 17px; color: #fafafa; background: rgba(51, 51, 51, 0.8); }
 
-.move .moveBody { z-index: 4; position: relative; transform: skewY(-2deg); transform-origin: 100%; }
+.move .moveBody { z-index: 4; position: relative; }
 
 .move .moveBody img { z-index: 5; position: relative; top: 9px; width: 31px; height: 31px; cursor: pointer; opacity: 0.75; filter: alpha(opacity=75); }
 
