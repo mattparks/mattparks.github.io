@@ -1,3 +1,8 @@
+$dropdown-bg-colour: #fff !default;
+$dropdown-hover-bg-colour: #eee !default;
+$dropdown-colour: $secondary-colour !default;
+$dropdown-item-height: 50px !default;
+
 .dropdown-content {
   @extend .z-depth-1;
   background-color: $dropdown-bg-colour;

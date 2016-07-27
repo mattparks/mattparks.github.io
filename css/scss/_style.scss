@@ -1,3 +1,15 @@
+$primary-colour: colour("blue", "lighten-1") !default;
+$primary-colour-light: lighten($primary-colour, 15%) !default;
+$primary-colour-dark: darken($primary-colour, 15%) !default;
+
+$background-colour: colour("grey", "lighten-5") !default;
+
+$secondary-colour: colour("blue", "accent-3") !default;
+
+$success-colour: color("green", "base") !default;
+$error-colour: color("red", "base") !default;
+$link-colour: color("light-blue", "darken-1") !default;
+
 *, *:after, *:before {
   margin: 0 auto;
   padding: 0;
@@ -53,21 +65,21 @@ hr {
   position: relative;
   background-color: #404456;
 
-//  &:before {
-//    content:'';
-//    position:absolute;
-//    bottom: 100%;
-//    border-left: 100vw solid transparent;
-//    border-bottom: 80px solid $background-colour;
-//  }
+  &:before {
+    content:'';
+    position:absolute;
+    bottom: 100%;
+    border-left: 100vw solid transparent;
+    border-bottom: 80px solid $background-colour;
+  }
 
-//  &:after {
-//    content:'';
-//    position:absolute;
-//    top: 100%;
-//    border-right: 100vw solid transparent;
-//    border-top: 80px solid $background-colour;
-//  }
+  &:after {
+    content:'';
+    position:absolute;
+    top: 100%;
+    border-right: 100vw solid transparent;
+    border-top: 80px solid $background-colour;
+  }
 
   .content {
     width: 100%;
@@ -78,19 +90,19 @@ hr {
 
     background-color: $background-colour;
 
-    .right {
-      z-index: 3;
-      position: relative;
-      width: 61%;
-      float: right;
-      padding: 1%;
-    }
-
     .left {
       z-index: 3;
       position: relative;
       width: 39%;
       float: left;
+      padding: 1%;
+    }
+
+    .right {
+      z-index: 3;
+      position: relative;
+      width: 61%;
+      float: right;
       padding: 1%;
     }
   }
@@ -102,9 +114,9 @@ hr {
 
   top: 0px;
   width: 100%;
-  height: 49px; // 148px
+  height: 148px;
 
-  line-height: 49px; // 99px
+  line-height: 99px;
 
   font-size: 17px;
 
@@ -115,8 +127,8 @@ hr {
     z-index: 4;
     position: relative;
 
-  //  transform: skewY(-2.0deg);
-  //  transform-origin: 100%;
+    transform: skewY(-2.0deg);
+    transform-origin: 100%;
 
     img {
       z-index: 5;

@@ -1,18 +1,24 @@
-function Page (id, path, name) {
+function Page(id, path, name, loadFunction) {
   this.id = id;
   this.path = path;
   this.name = name;
   this.visible = false;
   this.divHeight = 0;
   this.progressInto = 0;
+  this.loadFunction = loadFunction;
 }
 
 var pages = [
-  new Page(0, './html/intro.html', "Intro"),
-  new Page(1, "./html/about.html", "About"),
-  new Page(2, "./html/skills.html", "Skills"),
-  new Page(3, "./html/history.html", "History"),
-  new Page(4, "./html/contact.html", "Contact"),
+  new Page(0, './html/intro.html', "Intro", null),
+  new Page(1, "./html/about.html", "About", null),
+  new Page(2, "./html/skills.html", "Skills", function loadFunction() {
+    $('progress').each(function() {
+      var max = $(this).val();
+      $(this).val(0).animate({ value: max }, { duration: 2000, easing: 'easeOutCirc' });
+		});
+  }),
+  new Page(3, "./html/history.html", "History", null),
+  new Page(4, "./html/contact.html", "Contact", null),
 ];
 var backgrounds = [
   "./img/slideshow/1.jpg",
@@ -207,6 +213,11 @@ function reveal(object) {
     left: "0",
   }, 1000, function() {
   });
+  setTimeout(function() {
+    if (object.loadFunction) {
+      object.loadFunction();
+    }
+  }, 1000);
 }
 
 function getScrollID(object) {

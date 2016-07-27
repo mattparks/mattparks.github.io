@@ -4,7 +4,7 @@
     <hr/><br/>
 
     <div class="left">
-      <form>
+      <form id="contact-form">
         <div class="input-field">
           <input id="name" type="text" class="validate">
           <label for="name">Name</label>
@@ -18,12 +18,14 @@
           <label for="subject">Subject</label>
         </div>
         <div class="input-field">
-          <textarea id="textarea" class="materialize-textarea"></textarea>
+          <textarea id="textarea" type="textarea" class="materialize-textarea"></textarea>
           <label for="textarea">Textarea</label>
         </div>
 
         <center>
-          <br/><a action="submit" class="waves-effect waves-light btn blue">Submit</a><br/><br/>
+          <br/>
+          <a onClick="sendEmail();" class="waves-effect waves-light btn blue">Submit</a>
+          <a onClick="clearForms();" class="waves-effect waves-light btn red">Reset</a>
         </center>
       </form>
     </div>
@@ -42,8 +44,29 @@
   </div>
 </div>
 
-<script>
+<script type="text/javascript">
   function sendEmail() {
-    window.open('mailto:mattparks5855@gmail.com?subject=subject&body=body');
+    var name = $("#name").value;
+    var email = $("#email").value;
+    var subject = $("#subject").value;
+    var textarea = $("#textarea").value;
+  //  window.open('mailto:mattparks5855@gmail.com?subject=subject&body=body');
+  }
+
+  function clearForms() {
+    swal({
+      title: "Are you sure you want to clear the forms?",
+      text: "If you clear the forms you will loose all progress.",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#F44336",
+      confirmButtonText: "Clear",
+      cancelButtonText: "Cancel",
+      closeOnConfirm: true
+    }, function(isConfirm) {
+      if (isConfirm) {
+        $(this).closest('form').find('input[type=text], input[type=email], textarea').val('');
+      }
+    });
   }
 </script>
