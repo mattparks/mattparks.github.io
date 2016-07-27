@@ -8,11 +8,11 @@ function Page (id, path, name) {
 }
 
 var pages = [
-  new Page(0, './html/_intro.html', "Intro"),
-  new Page(1, "./html/_about.html", "About"),
-  new Page(2, "./html/_skills.html", "Skills"),
-  new Page(3, "./html/_history.html", "History"),
-  new Page(4, "./html/_contact.html", "Contact"),
+  new Page(0, './html/intro.html', "Intro"),
+  new Page(1, "./html/about.html", "About"),
+  new Page(2, "./html/skills.html", "Skills"),
+  new Page(3, "./html/history.html", "History"),
+  new Page(4, "./html/contact.html", "Contact"),
 ];
 var backgrounds = [
   "./img/slideshow/1.jpg",
