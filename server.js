@@ -2,7 +2,7 @@ var http = require('http');
 var url = require('url');
 var path = require('path');
 var fs = require('fs');
-var port = process.argv[2] || 80;
+var port = process.argv[2] || 3000;
 
 http.createServer(function(request, response) {
 	var uri = url.parse(request.url).pathname

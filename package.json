@@ -3,11 +3,20 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattparks/Mattparks-Homepage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mattparks/Mattparks-Homepage/issues"
+  },
+  "homepage": "https://github.com/mattparks/Mattparks-Homepage#readme",
   "description": ""
 }

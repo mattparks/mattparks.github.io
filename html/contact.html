@@ -3,17 +3,27 @@
     <h1>Contact Me</h1>
     <hr/><br/>
 
-    <div class="left contactMe">
+    <div class="left">
       <form>
-        <input placeholder="Name" type="text" value="" required>
-        <input placeholder="Email address" type="email" onblur="this.setAttribute('value', this.value);" value="" required>
-        <span class="validation-text">Please enter a valid email address.</span>
-        <div class="flex">
-          <textarea placeholder="Message" rows="1" required></textarea>
+        <div class="input-field">
+          <input id="name" type="text" class="validate">
+          <label for="name">Name</label>
+        </div>
+        <div class="input-field">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field">
+          <input id="subject" type="text" class="validate"></textarea>
+          <label for="subject">Subject</label>
+        </div>
+        <div class="input-field">
+          <textarea id="textarea" class="materialize-textarea"></textarea>
+          <label for="textarea">Textarea</label>
         </div>
 
         <center>
-          <br/><a type="submit" class="waves-effect waves-light btn blue">Submit</a>
+          <br/><a action="submit" class="waves-effect waves-light btn blue">Submit</a><br/><br/>
         </center>
       </form>
     </div>
@@ -31,3 +41,9 @@
     </center>
   </div>
 </div>
+
+<script>
+  function sendEmail() {
+    window.open('mailto:mattparks5855@gmail.com?subject=subject&body=body');
+  }
+</script>
