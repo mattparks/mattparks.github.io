@@ -1443,7 +1443,7 @@ hr { border: 0; height: 1px; background-image: linear-gradient(to right, transpa
 
 .contactMe .flex { display: flex; align-items: stretch; }
 
-.contactMe .flex textarea { line-height: 120%; }
+.contactMe .flex textarea { line-height: 180%; }
 
 #navbar { z-index: 4; position: fixed; top: -50px; left: 0; right: 0; width: 100%; height: 50px; background: rgba(51, 51, 51, 0.8); }
 
