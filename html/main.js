@@ -9,8 +9,8 @@ function Page(id, path, name, loadFunction) {
 }
 
 var pages = [
-  new Page(0, './html/intro.html', "Intro", null),
-  new Page(1, "./html/about.html", "About", null),
+  new Page(0, "./html/about.html", "About", null),
+  new Page(1, './html/intro.html', "Intro", null),
   new Page(2, "./html/skills.html", "Skills", function loadFunction() {
     $('progress').each(function() {
       var max = $(this).val();
@@ -28,6 +28,7 @@ var backgrounds = [
   "./img/slideshow/5.jpg",
 ];
 var pagesHeight = 0;
+var size = null;
 
 $(document).ready(function() {
   $("#background").hide();
@@ -44,18 +45,8 @@ $(document).ready(function() {
     changeImage(1);
     updatePages();
     updateNav();
+    updateSize();
   }, 1500);
-
-  setTimeout(function() {
-    $("#navbar").animate({
-      top: "0",
-    }, 1000, function() {
-    });
-    $("#cssmenu").animate({
-      top: "0",
-    }, 1000, function() {
-    });
-  }, 2000);
 });
 
 function loadNext(i) {
@@ -78,6 +69,11 @@ function loadNext(i) {
     li.appendChild(a);
 
     $("#" + getScroll(pages[i])).css("left", i % 2 ? "-100%" : "200%");
+    $("#" + getMove(pages[i])).css("left", i % 2 ? "-100%" : "200%");
+
+    if (i === 0) {
+      $("#" + getScroll(pages[i])).css("margin-top", "50px");
+    }
 
     // Register next page, or end.
     var nextI = i + 1;
@@ -121,6 +117,7 @@ function loadTimeline() {
 $(window).resize(function() {
   updatePages();
   updateNav();
+  updateSize();
 });
 
 $(window).on('scroll', function() {
@@ -142,6 +139,45 @@ function updatePages() {
     }
 
     pagesHeight += pages[i].divHeight;
+  }
+}
+
+function updateSize() {
+  var newSize = $(document).width() < 500 ? "small" : "large";
+
+  if (!size || size !== newSize) {
+    switch(newSize) {
+        case "small":
+          $("#navbar").animate({
+            top: "-50px",
+          }, 500, function() {
+          });
+          $("#cssmenu").animate({
+            top: "-50px",
+          }, 500, function() {
+          });
+          $("#" + getScroll(pages[0])).animate({
+            marginTop: "0",
+          }, 500, function() {
+          });
+          break;
+        case "large":
+          $("#navbar").animate({
+            top: "0px",
+          }, 500, function() {
+          });
+          $("#cssmenu").animate({
+            top: "0px",
+          }, 500, function() {
+          });
+          $("#" + getScroll(pages[0])).animate({
+            marginTop: "50px",
+          }, 500, function() {
+          });
+          break;
+    }
+
+    size = newSize;
   }
 }
 
@@ -208,6 +244,10 @@ function reveal(object) {
     left: "0",
   }, 1000, function() {
   });
+  $("#" + getMove(object)).animate({
+    left: "0",
+  }, 1000, function() {
+  });
   setTimeout(function() {
     if (object.loadFunction) {
       object.loadFunction();
@@ -215,10 +255,14 @@ function reveal(object) {
   }, 1000);
 }
 
+function getNavitem(object) {
+  return "navitem_" + object.name.replace(/ /g,"_").toLowerCase();
+}
+
 function getScroll(object) {
   return "scroll_" + object.name.replace(/ /g,"_").toLowerCase();
 }
 
-function getNavitem(object) {
-  return "navitem_" + object.name.replace(/ /g,"_").toLowerCase();
+function getMove(object) {
+  return "move_" + object.name.replace(/ /g,"_").toLowerCase();
 }

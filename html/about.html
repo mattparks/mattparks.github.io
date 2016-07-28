@@ -1,14 +1,50 @@
+<style>
+  .aboutContent {
+    display: flex;
+    align-items: center;
+  }
+
+  .aboutContent img {
+    width: 256px;
+    height: 256px;
+    border-radius: 50%;
+    border: 6px
+    solid #fff;
+  }
+
+  @media only screen and (max-width: 756px) {
+    .aboutContent {
+      display: block;
+    }
+
+    .aboutContent img {
+      z-index: 2;
+      position: relative;
+      left: calc(50% - 128px);
+    }
+  }
+</style>
+
 <div id="scroll_about" class="scroll">
   <div class="content">
-    <h1>About</h1>
-    <hr/><br/>
+    <div class="aboutContent">
+      <img src="https://pbs.twimg.com/profile_images/506606279096139776/PyeAp4S8.jpeg"/>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-  </div>
+      <center style="padding: 2%;">
+        <h1>Hello, my name is Matthew Albrecht.</h1>
+        <h3>I am a Java and Website developer. I am always look for new things to learn more about maths and computers.</h3>
+      </center>
+    </div>
 
-  <div class="move">
     <center>
-      <a onClick="scrollDown('about')"><img src="img/scrolldown.png"/></a>
+      <hr/><br/>
+      <p>My name is Matthew Albrecht (Mattparks), I am a self taught 16 year old computer software developer who is always looking to learn more about computers. Recently I have been developing a 3D game engine and last year I was making minecraft mods such as 4Space or Minestellar. I try to make my games / mods as realistic as possible without sacrificing gameplay. In addition all of my code is open source. I find making minecraft mods a great way to learn Java and I'm very proud with my work, but my work would be completely worthless to me if other people did not like it too. That is why I am always looking for suggestions and also help in development.</p>
     </center>
   </div>
+</div>
+
+<div id="move_about" class="move">
+  <center>
+    <a onClick="scrollDown('about')"><img src="img/scrolldown.png"/></a>
+  </center>
 </div>

@@ -1933,7 +1933,7 @@ hr { border: 0; height: 1px; background-image: linear-gradient(to right, transpa
 
 .main { z-index: 2; position: relative; overflow: hidden; width: 100%; height: 100%; top: 0; }
 
-.scroll { z-index: 3; position: relative; background-color: #404456; }
+.scroll { z-index: 2; position: relative; background-color: #404456; }
 
 .scroll .content { width: 100%; padding: 2%; line-height: 25px; overflow: hidden; display: block; background-color: #fafafa; }
 
@@ -1941,9 +1941,9 @@ hr { border: 0; height: 1px; background-image: linear-gradient(to right, transpa
 
 .scroll .content .right { z-index: 3; position: relative; width: 61%; float: right; padding: 1%; }
 
-.scroll .move { z-index: 2; position: relative; top: 0px; width: 100%; height: 80px; line-height: 80px; font-size: 17px; color: #fafafa; background: rgba(51, 51, 51, 0.8); }
+.move { z-index: 2; position: relative; width: 100%; height: 80px; line-height: 80px; font-size: 17px; color: #fafafa; background: rgba(51, 51, 51, 0.8); }
 
-.scroll .move img { z-index: 5; position: relative; width: 31px; height: 31px; cursor: pointer; opacity: 0.75; filter: alpha(opacity=75); }
+.move img { z-index: 5; position: relative; top: 13px; width: 31px; height: 31px; cursor: pointer; opacity: 0.75; filter: alpha(opacity=75); }
 
 @media only screen and (max-width: 800px) { .scroll .content h1, .scroll .content p { text-align: center; }
   .scroll .content .right { position: static; width: 100%; float: center; padding: 1%; }
@@ -2562,7 +2562,7 @@ body.stop-scrolling { height: 100%; }
 
 .sweet-alert .la-ball-fall { position: absolute; left: 50%; top: 50%; margin-left: -27px; margin-top: 4px; opacity: 0; visibility: hidden; }
 
-.sweet-alert button { background-color: #8CD4F5; color: white; border: none; border-radius: 2px; height: 36px; line-height: 36px; outline: 0; padding: 0 2rem; text-transform: uppercase; vertical-align: middle; -webkit-tap-highlight-color: transparent; box-shadow: none; padding: 10px 32px; margin: 26px 5px 0 5px; cursor: pointer; }
+.sweet-alert button { background-color: #8CD4F5; color: white; border: none; border-radius: 2px; height: 36px; outline: 0; padding: 0 2rem; text-transform: uppercase; vertical-align: middle; -webkit-tap-highlight-color: transparent; box-shadow: none; padding: 10px 32px; margin: 26px 5px 0 5px; cursor: pointer; }
 
 .sweet-alert button:focus { outline: none; box-shadow: 0 0 2px rgba(128, 179, 235, 0.5), inset 0 0 0 1px rgba(0, 0, 0, 0.05); }
 
