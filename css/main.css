@@ -3011,15 +3011,15 @@ body.stop-scrolling { height: 100%; }
 
 .ipad-wrap { max-width: 624px; position: relative; overflow: visible; margin-bottom: 2em; }
 
-.ipad { position: relative; overflow: hidden; padding-bottom: 150%; background: #222; border-top-left-radius: 5% 3.33333%; border-top-right-radius: 5% 3.33333%; border-bottom-left-radius: 5% 3.33333%; border-bottom-right-radius: 5% 3.33333%; }
+.ipad-wrap .ipad { position: relative; overflow: hidden; padding-bottom: 150%; background: #222; border-top-left-radius: 5% 3.33333%; border-top-right-radius: 5% 3.33333%; border-bottom-left-radius: 5% 3.33333%; border-bottom-right-radius: 5% 3.33333%; }
 
-.ipad.white { background: #fff; }
+.ipad-wrap .ipad.white { background: #fff; }
 
-.ipad:before { content: ''; display: inline-block; position: absolute; top: 3.5%; left: 50%; margin-left: -.25em; width: 1.5%; padding-bottom: 1.5%; background: #383838; border-radius: 100%; }
+.ipad-wrap .ipad:before { content: ''; display: inline-block; position: absolute; top: 3.5%; left: 50%; margin-left: -.25em; width: 1.5%; padding-bottom: 1.5%; background: #383838; border-radius: 100%; }
 
-.img { background: #333; position: absolute; top: 8%; left: 5%; right: 5%; bottom: 8%; padding: 2%; }
+.ipad-wrap .ipad .img { background: #333; position: absolute; top: 8%; left: 5%; right: 5%; bottom: 8%; padding: 2%; }
 
-.img:after { content: ''; display: inline-block; position: absolute; top: -18em; left: 20em; width: 30em; height: 54em; -webkit-transform: rotate(-22.5deg); background: rgba(255, 255, 255, 0.2); background: linear-gradient(22.5deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.07)); }
+.ipad-wrap .ipad .img:after { content: ''; display: inline-block; position: absolute; top: -18em; left: 20em; width: 30em; height: 54em; -webkit-transform: rotate(-22.5deg); background: rgba(255, 255, 255, 0.2); background: linear-gradient(22.5deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.07)); }
 
 #skills span { top: -38px; left: 2%; position: relative; color: #222; font-size: 1.4em; line-height: 30px; }
 
@@ -3030,6 +3030,44 @@ progress::-webkit-progress-bar { background-color: #e0eaf0; }
 progress::-webkit-progress-value { background-color: #329ad1; }
 
 progress::-moz-progress-bar { background-color: #329ad1; }
+
+.social-icons { max-width: 980px; margin: 0 auto; }
+
+.social-icons li { list-style-type: none; }
+
+.icon { float: left; position: relative; width: 19%; height: 0; margin: 1% 0.5%; padding-bottom: 19%; }
+
+@media all and (min-width: 640px) { .icon { width: 9%; padding-bottom: 9%; } }
+
+.icon:last-of-type { margin-right: 0; }
+
+.icon a { display: block; position: absolute; left: 0; width: 100%; height: 100%; border: 0; border-radius: 10px; background-color: #fff; background-size: 100%; background-repeat: no-repeat; background-position: center center; transition: all .2s ease-out; }
+
+.icon a:hover { background-color: #222; background-size: 0%; transition: all .2s ease-out; }
+
+.icon__name { position: absolute; top: 50%; width: 100%; margin-top: -7px; color: #fff; font-size: 13px; text-align: center; transition: all .3s ease-out; opacity: 0; filter: blur(25px); transform: translateZ(0); will-change: transform; }
+
+.icon:hover .icon__name { transition: all .3s ease-out; opacity: 1; filter: blur(0); }
+
+.icon--facebook a { background-color: #3b5998; background-image: url("../img/buttons/icons/facebook-128.png"); }
+
+.icon--twitter a { background-color: #00aced; background-image: url("../img/buttons/icons/twitter-128.png"); }
+
+.icon--linkedin a { background-color: #007fb1; background-image: url("../img/buttons/icons/linkedin-128.png"); }
+
+.icon--instagram a { background-color: #5c3d2e; background-image: url("../img/buttons/icons/instagram-128.png"); }
+
+.icon--flickr a { background-color: #c9317d; background-image: url("../img/buttons/icons/flickr-128.png"); }
+
+.icon--spotify a { background-color: #80b719; background-image: url("../img/buttons/icons/spotify-128.png"); }
+
+.icon--soundcloud a { background-color: #f60; background-image: url("../img/buttons/icons/soundcloud-128.png"); }
+
+.icon--lastfm a { background-color: #d51007; background-image: url("../img/buttons/icons/lastfm-128.png"); }
+
+.icon--kickstarter a { background-color: #87c442; background-image: url("../img/buttons/icons/kickstarter-128.png"); }
+
+.icon--github a { background-color: #4183c4; background-image: url("../img/buttons/icons/github-128.png"); }
 
 /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
 /** prism.js default theme for JavaScript, CSS and HTML Based on dabblet (http://dabblet.com) @author Lea Verou */

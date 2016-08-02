@@ -6,58 +6,58 @@ $h: ($w / 1.5);
   position: relative;
   overflow: visible;
   margin-bottom: 2em;
-}
 
-.ipad {
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 150%;
+  .ipad {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 150%;
 
-  background: #222;
+    background: #222;
 
-  &.white {
-    background: #fff;
-  }
+    &.white {
+      background: #fff;
+    }
 
-  border-top-left-radius: $w $h;
-  border-top-right-radius: $w $h;
-  border-bottom-left-radius: $w $h;
-  border-bottom-right-radius: $w $h;
+    border-top-left-radius: $w $h;
+    border-top-right-radius: $w $h;
+    border-bottom-left-radius: $w $h;
+    border-bottom-right-radius: $w $h;
 
-  &:before {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: 3.5%;
-    left: 50%;
-    margin-left: -.25em;
-    width: 1.5%;
-    padding-bottom: 1.5%;
-    background: #383838;
-    border-radius: 100%;
-  }
-}
+    &:before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 3.5%;
+      left: 50%;
+      margin-left: -.25em;
+      width: 1.5%;
+      padding-bottom: 1.5%;
+      background: #383838;
+      border-radius: 100%;
+    }
 
-.img {
-  background: #333;
-  position: absolute;
-  top: 8%;
-  left: 5%;
-  right: 5%;
-  bottom: 8%;
-  padding: 2%;
+    .img {
+      background: #333;
+      position: absolute;
+      top: 8%;
+      left: 5%;
+      right: 5%;
+      bottom: 8%;
+      padding: 2%;
 
-  &:after {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: -18em;
+      &:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: -18em;
 
-    left: 20em;
-    width: 30em;
-    height: 54em;
-    -webkit-transform: rotate(-22.5deg);
-    background: rgba(255, 255, 255, .2);
-    background: linear-gradient(22.5deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .07)  )
+        left: 20em;
+        width: 30em;
+        height: 54em;
+        -webkit-transform: rotate(-22.5deg);
+        background: rgba(255, 255, 255, .2);
+        background: linear-gradient(22.5deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .07)  )
+      }
+    }
   }
 }

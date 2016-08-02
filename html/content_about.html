@@ -1,45 +1,69 @@
 <style>
-  .aboutContent {
-    display: flex;
-    align-items: center;
+  #aboutSection {
+    margin: auto;
   }
 
-  .aboutContent img {
+  #aboutSection img {
     width: 256px;
     height: 256px;
+    left: 0;
     border-radius: 50%;
     border: 6px
     solid #fff;
   }
 
+  div#one {
+    float:left;
+    top: 0;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+  }
+
+  div#two {
+    float:left;
+    width: calc(100% - 260px);
+    text-align: center;
+    margin-bottom: 2%;
+  }
+
+  div#aboutText {
+    text-align: center;
+    margin-bottom: 2%;
+  }
+
   @media only screen and (max-width: 756px) {
-    .aboutContent {
-      display: block;
+    div#one {
+      width: 100%;
     }
 
-    .aboutContent img {
+    #aboutSection img {
       z-index: 2;
       position: relative;
       left: calc(50% - 128px);
+    }
+
+    div#two {
+      width: 100%;
     }
   }
 </style>
 
 <div id="scroll_about" class="scroll">
   <div class="content">
-    <div class="aboutContent">
-      <img src="https://pbs.twimg.com/profile_images/506606279096139776/PyeAp4S8.jpeg"/>
-
-      <center style="padding: 2%;">
+    <section id="aboutSection">
+      <div id="one">
+        <img src="https://pbs.twimg.com/profile_images/506606279096139776/PyeAp4S8.jpeg"/>
+      </div>
+      <div id="two">
         <h1>Hello, my name is Matthew Albrecht.</h1>
-        <h3>I am a Java and Website developer. I am always look for new things to learn more about maths and computers.</h3>
-      </center>
-    </div>
+      </div>
+    </section>
 
-    <center>
+    <div id="aboutText">
       <hr/><br/>
       <p>My name is Matthew Albrecht (Mattparks), I am a self taught 16 year old computer software developer who is always looking to learn more about computers. Recently I have been developing a 3D game engine and last year I was making minecraft mods such as 4Space or Minestellar. I try to make my games / mods as realistic as possible without sacrificing gameplay. In addition all of my code is open source. I find making minecraft mods a great way to learn Java and I'm very proud with my work, but my work would be completely worthless to me if other people did not like it too. That is why I am always looking for suggestions and also help in development.</p>
-    </center>
+    </div>
   </div>
 </div>
 
