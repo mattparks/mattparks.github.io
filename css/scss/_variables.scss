@@ -1,0 +1,94 @@
+
+/* Colours. **********/
+$primary-colour: colour("blue", "lighten-1") !default;
+$primary-colour-light: lighten($primary-colour, 15%) !default;
+$primary-colour-dark: darken($primary-colour, 15%) !default;
+
+$secondary-colour: colour("blue", "accent-3") !default;
+$background-colour: colour("grey", "lighten-5") !default;
+
+$text-colour: colour("grey", "darken-4") !default;
+$success-colour: color("green", "base") !default;
+$error-colour: color("red", "base") !default;
+$link-colour: color("light-blue", "darken-1") !default;
+
+/* Roboto Font. **********/
+$roboto-font-path: "../fonts/roboto/" !default;
+
+/* Typography. **********/
+$off-black: rgba(0, 0, 0, 0.87) !default;
+$h1-fontsize: 4.2rem !default;
+$h2-fontsize: 3.56rem !default;
+$h3-fontsize: 2.92rem !default;
+$h4-fontsize: 2.28rem !default;
+$h5-fontsize: 1.64rem !default;
+$h6-fontsize: 1rem !default;
+
+// Media Query Ranges
+$small-screen-up: 601px !default;
+$medium-screen-up: 993px !default;
+$large-screen-up: 1201px !default;
+$small-screen: 600px !default;
+$medium-screen: 992px !default;
+$large-screen: 1200px !default;
+
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
+$small-and-down: "only screen and (max-width : #{$small-screen})" !default;
+$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+
+// Range / Intervels
+$range : $large-screen - $small-screen !default;
+$intervals: 20 !default;
+$interval-size: $range / $intervals !default;
+
+/* Dropdowns. **********/
+$dropdown-bg-colour: #fff !default;
+$dropdown-hover-bg-colour: #eee !default;
+$dropdown-colour: $secondary-colour !default;
+$dropdown-item-height: 50px !default;
+
+/* Forms. **********/
+$num-cols: 12 !default;
+$gutter-width: 1.5rem !default;
+$element-top-margin: $gutter-width/3 !default;
+$element-bottom-margin: ($gutter-width*2)/3 !default;
+
+// Text Inputs + Textarea
+$input-height: 3rem !default;
+$input-textarea-height: 10rem !default;
+$input-border-colour: colour("grey", "base") !default;
+$input-border: 1px solid $input-border-colour !default;
+$input-background: #fff !default;
+$input-error-colour: $error-colour !default;
+$input-success-colour: $success-colour !default;
+$input-focus-colour: $secondary-colour !default;
+$input-font-size: 1rem !default;
+$input-margin: 0 0 20px 0 !default;
+$input-padding: 0 !default;
+$input-transition: all .3s !default;
+$label-font-size: .8rem !default;
+$input-disabled-colour: rgba(0,0,0, .26) !default;
+$input-disabled-solid-colour: #BDBDBD !default;
+$input-disabled-border: 1px dotted $input-disabled-colour !default;
+$input-invalid-border: 1px solid $input-error-colour !default;
+$placeholder-text-colour: lighten($input-border-colour, 20%) !default;
+
+// Radio Buttons
+$radio-fill-colour: $secondary-colour !default;
+$radio-empty-colour: #5a5a5a !default;
+$radio-border: 2px solid $radio-fill-colour !default;
+
+// Range
+$range-height: 14px !default;
+$range-width: 14px !default;
+$track-height: 3px !default;
+
+/* Tables. **********/
+$table-border-colour: #d0d0d0 !default;
+$table-striped-colour: #f2f2f2 !default;
+
+/* Scroll Bar. **********/
+$scroll-bar-size: 12px;
+$scroll-bar-colour: $primary-colour;

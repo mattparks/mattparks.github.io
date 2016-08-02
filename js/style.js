@@ -1,7 +1,5 @@
 (function ($) {
-
-  // Add posibility to scroll to selected option
-  // usefull for select for example
+  // Add posibility to scroll to selected option usefull for select for example.
   $.fn.scrollTo = function(elem) {
     $(this).scrollTop($(this).scrollTop() - $(this).offset().top + $(elem).offset().top);
     return this;
@@ -11,9 +9,9 @@
     var defaults = {
       inDuration: 300,
       outDuration: 225,
-      constrain_width: true, // Constrains width of dropdown to the activator
+      constrain_width: true, // Constrains width of dropdown to the activator.
       hover: false,
-      gutter: 0, // Spacing from edge
+      gutter: 0, // Spacing from edge.
       belowOrigin: false,
       alignment: 'left',
       stopPropagation: false
@@ -24,7 +22,7 @@
       var options = $.extend({}, defaults, option);
       var isFocused = false;
 
-      // Dropdown menu
+      // Dropdown menu.
       var activates = $("#"+ origin.attr('data-activates'));
 
       function updateOptions() {
@@ -48,12 +46,11 @@
 
       updateOptions();
 
-      // Attach dropdown to its activator
+      // Attach dropdown to its activator.
       origin.after(activates);
 
       /*
-        Helper function to position and resize dropdown.
-        Used in hover and click handler.
+       * Helper function to position and resize dropdown. Used in hover and click handler.
       */
       function placeDropdown(eventType) {
         // Check for simultaneous focus and click events.
@@ -61,14 +58,14 @@
           isFocused = true;
         }
 
-        // Check html data attributes
+        // Check html data attributes.
         updateOptions();
 
-        // Set Dropdown state
+        // Set Dropdown state.
         activates.addClass('active');
         origin.addClass('active');
 
-        // Constrain width
+        // Constrain width.
         if (options.constrain_width === true) {
           activates.css('width', origin.outerWidth());
 
@@ -76,7 +73,7 @@
           activates.css('white-space', 'nowrap');
         }
 
-        // Offscreen detection
+        // Offscreen detection.
         var windowHeight = window.innerHeight;
         var originHeight = origin.innerHeight();
         var offsetLeft = origin.offset().left;
@@ -85,7 +82,7 @@
         var gutterSpacing = 0;
         var leftPosition = 0;
 
-        // Below Origin
+        // Below Origin.
         var verticalOffset = 0;
         if (options.belowOrigin === true) {
           verticalOffset = originHeight;
@@ -100,11 +97,11 @@
 
 
         if (offsetLeft + activates.innerWidth() > $(window).width()) {
-          // Dropdown goes past screen on right, force right alignment
+          // Dropdown goes past screen on right, force right alignment.
           currAlignment = 'right';
 
         } else if (offsetLeft - activates.innerWidth() + origin.innerWidth() < 0) {
-          // Dropdown goes past screen on left, force left alignment
+          // Dropdown goes past screen on left, force left alignment.
           currAlignment = 'left';
         }
         // Vertical bottom offscreen detection
@@ -122,18 +119,17 @@
           }
         }
 
-        // Handle edge alignment
+        // Handle edge alignment.
         if (currAlignment === 'left') {
           gutterSpacing = options.gutter;
           leftPosition = origin.position().left + gutterSpacing;
-        }
-        else if (currAlignment === 'right') {
+        } else if (currAlignment === 'right') {
           var offsetRight = origin.position().left + origin.outerWidth() - activates.outerWidth();
           gutterSpacing = -options.gutter;
           leftPosition =  offsetRight + gutterSpacing;
         }
 
-        // Position dropdown
+        // Position dropdown.
         activates.css({
           position: 'absolute',
           top: origin.position().top + verticalOffset + scrollOffset,
@@ -141,7 +137,7 @@
         });
 
 
-        // Show dropdown
+        // Show dropdown.
         activates.stop(true, true).css('opacity', 0)
           .slideDown({
             queue: false,
@@ -163,20 +159,19 @@
         setTimeout(function() { activates.css('max-height', ''); }, options.outDuration);
       }
 
-      // Hover
-      if (options.hover) {
+      if (options.hover) { // Hover.
         var open = false;
         origin.unbind('click.' + origin.attr('id'));
-        // Hover handler to show dropdown
-        origin.on('mouseenter', function(e){ // Mouse over
+        // Hover handler to show dropdown.
+        origin.on('mouseenter', function(e){ // Mouse over.
           if (open === false) {
             placeDropdown();
             open = true;
           }
         });
         origin.on('mouseleave', function(e){
-          // If hover on origin then to something other than dropdown content, then close
-          var toEl = e.toElement || e.relatedTarget; // added browser compatibility for target element
+          // If hover on origin then to something other than dropdown content, then close.
+          var toEl = e.toElement || e.relatedTarget; // Added browser compatibility for target element.
           if(!$(toEl).closest('.dropdown-content').is(activates)) {
             activates.stop(true, true);
             hideDropdown();
@@ -184,7 +179,7 @@
           }
         });
 
-        activates.on('mouseleave', function(e){ // Mouse out
+        activates.on('mouseleave', function(e){ // Mouse out.
           var toEl = e.toElement || e.relatedTarget;
           if(!$(toEl).closest('.dropdown-button').is(origin)) {
             activates.stop(true, true);
@@ -193,27 +188,25 @@
           }
         });
 
-        // Click
-      } else {
-        // Click handler to show dropdown
+      } else { // Click.
+        // Click handler to show dropdown.
         origin.unbind('click.' + origin.attr('id'));
         origin.bind('click.'+origin.attr('id'), function(e){
           if (!isFocused) {
-            if ( origin[0] == e.currentTarget &&
-                 !origin.hasClass('active') &&
-                 ($(e.target).closest('.dropdown-content').length === 0)) {
-              e.preventDefault(); // Prevents button click from moving window
+            if (origin[0] == e.currentTarget && !origin.hasClass('active') && ($(e.target).closest('.dropdown-content').length === 0)) {
+              e.preventDefault(); // Prevents button click from moving window.
               if (options.stopPropagation) {
                 e.stopPropagation();
               }
               placeDropdown('click');
             }
-            // If origin is clicked and menu is open, close menu
+            // If origin is clicked and menu is open, close menu.
             else if (origin.hasClass('active')) {
               hideDropdown();
               $(document).unbind('click.'+ activates.attr('id') + ' touchstart.' + activates.attr('id'));
             }
-            // If menu open, add click close handler to document
+
+            // If menu open, add click close handler to document.
             if (activates.hasClass('active')) {
               $(document).bind('click.'+ activates.attr('id') + ' touchstart.' + activates.attr('id'), function (e) {
                 if (!activates.is(e.target) && !origin.is(e.target) && (!origin.find(e.target).length) ) {
@@ -224,20 +217,39 @@
             }
           }
         });
+      }
 
-      } // End else
-
-      // Listen to open and close event - useful for select component
+      // Listen to open and close event - useful for select component.
       origin.on('open', function(e, eventType) {
         placeDropdown(eventType);
       });
       origin.on('close', hideDropdown);
-
-
     });
-  }; // End dropdown plugin
+  };
 
   $(document).ready(function(){
     $('.dropdown-button').dropdown();
   });
-}( jQuery ));
+}(jQuery));
+
+$(document).ready(function() {
+  Waves.init(config = {
+    duration: 1000,
+    delay: 500
+  });
+
+  // File Input Path
+  $(document).on('change', '.file-field input[type="file"]', function () {
+    var file_field = $(this).closest('.file-field');
+    var path_input = file_field.find('input.file-path');
+    var files = $(this)[0].files;
+    var file_names = [];
+
+    for (var i = 0; i < files.length; i++) {
+      file_names.push(files[i].name);
+    }
+
+    path_input.val(file_names.join(", "));
+    path_input.trigger('change');
+  });
+});

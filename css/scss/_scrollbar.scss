@@ -1,11 +1,9 @@
-$scroll-bar-size: 12px;
-$scroll-bar-colour: $primary-colour;
-
 ::-webkit-scrollbar {
-  display: none;
   overflow: visible;
   width: 12px;
   height: 6px;
+
+  display: none;
 }
 
 ::-webkit-scrollbar-track-piece {

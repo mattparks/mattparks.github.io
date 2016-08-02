@@ -4,81 +4,84 @@
     <hr/><br/>
 
     <div class="left">
-      <form method="post" id="contact-form">
-        <div class="input-field">
-          <input id="name" type="text" class="validate">
-          <label for="name">Name</label>
+      <form method="post" action="#" class="sized" id="contact-form">
+        <div class="text-input">
+          <label for="name">Full Name</label>
+          <input type="text" name="name" id="name" class="validate" placeholder="" />
+          <span class="separator"> </span>
         </div>
-        <div class="input-field">
-          <input id="email" type="email" class="validate">
+        <div class="text-input">
           <label for="email">Email</label>
+          <input type="text" name="email" id="email" class="validate" placeholder="" />
+          <span class="separator"> </span>
         </div>
-        <div class="input-field">
-          <input id="subject" type="text" class="validate"></textarea>
+        <div class="text-input">
           <label for="subject">Subject</label>
+          <input type="text" name="subject" id="subject" class="validate" placeholder="" />
+          <span class="separator"> </span>
         </div>
-        <div class="input-field">
-          <textarea id="textarea" type="textarea" class="materialize-textarea"></textarea>
+        <div class="text-input">
           <label for="textarea">Textarea</label>
+          <textarea type="textarea" name="textarea" id="textarea" class="validate" placeholder="" />
         </div>
 
         <center>
           <br/>
-          <a onClick="sendEmail();" class="waves-effect waves-light btn blue">Submit</a>
-          <a onClick="clearForms();" class="waves-effect waves-light btn red">Reset</a>
+          <a onClick="sendEmail();" class="btn btn-medium btn-blue btn-radius waves-effect">Submit</a>
+          <a onClick="clearForms();" class="btn btn-medium btn-orange btn-radius waves-effect">Reset</a>
         </center>
       </form><br/><br/><br/>
     </div>
 
     <div class="right">
       <ul class="social-icons">
-        <li class="icon icon--facebook">
-          <a href="#">
+        <li class="icon icon--facebook waves-effect">
+          <a href="">
             <span class="icon__name">Facebook</span>
           </a>
         </li>
-        <li class="icon icon--twitter">
-          <a href="#">
+        <li class="icon icon--twitter waves-effect">
+          <a href="">
             <span class="icon__name">Twitter</span>
           </a>
         </li>
-        <li class="icon icon--linkedin">
-          <a href="#">
+        <li class="icon icon--linkedin waves-effect">
+          <a href="">
             <span class="icon__name">LinkedIn</span>
           </a>
         </li>
-        <li class="icon icon--instagram">
-          <a href="#">
+        <li class="icon icon--instagram waves-effect">
+          <a href="">
             <span class="icon__name">Instagram</span>
           </a>
         </li>
-        <li class="icon icon--flickr">
-          <a href="#">
+        <li class="icon icon--flickr waves-effect">
+          <a href="">
             <span class="icon__name">Flickr</span>
           </a>
         </li>
-        <li class="icon icon--spotify">
-          <a href="#">
+        <li class="icon icon--spotify waves-effect">
+          <a href="">
             <span class="icon__name">Spotify</span>
           </a>
         </li>
-        <li class="icon icon--soundcloud">
-          <a href="#">
+        <li class="icon icon--soundcloud waves-effect">
+          <a href="">
             <span class="icon__name">Soundcloud</span>
           </a>
         </li>
-        <li class="icon icon--lastfm">
-          <a href="#">
+        <li class="icon icon--lastfm waves-effect">
+          <a href="">
             <span class="icon__name">Last.fm</span>
           </a>
         </li>
-        <li class="icon icon--kickstarter">
-          <a href="#">
+        <li class="icon icon--kickstarter waves-effect">
+          <a href="">
             <span class="icon__name">Kickstarter</span>
           </a>
         </li>
-        <li class="icon icon--github">
-          <a href="#">
+        <li class="icon icon--github waves-effect">
+          <a href="">
             <span class="icon__name">GitHub</span>
           </a>
         </li>
@@ -116,7 +119,7 @@
       text: "If you clear the forms you will loose all progress.",
       type: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#F44336",
+      confirmButtonColor: "#ff9800",
       confirmButtonText: "Clear",
       cancelButtonText: "Cancel",
       closeOnConfirm: true

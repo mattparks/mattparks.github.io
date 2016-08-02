@@ -1,15 +1,3 @@
-$primary-colour: colour("blue", "lighten-1") !default;
-$primary-colour-light: lighten($primary-colour, 15%) !default;
-$primary-colour-dark: darken($primary-colour, 15%) !default;
-
-$background-colour: colour("grey", "lighten-5") !default;
-
-$secondary-colour: colour("blue", "accent-3") !default;
-
-$success-colour: color("green", "base") !default;
-$error-colour: color("red", "base") !default;
-$link-colour: color("light-blue", "darken-1") !default;
-
 *, *:after, *:before {
   margin: 0 auto;
   padding: 0;
@@ -24,18 +12,18 @@ $link-colour: color("light-blue", "darken-1") !default;
   box-sizing: border-box;
 }
 
-html, body {
-  color: #404040;
-}
-
 body {
+  color: $text-colour;
   background-color: #404456;
 }
 
 hr {
+  display: block;
+  height: 2px;
   border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  border-top: 2px solid #bdbdbd;
+  margin: 2em 0;
+  padding: 0;
 }
 
 #background {
@@ -141,6 +129,17 @@ hr {
   }
 }
 
+// Texts
+.text-center {
+  text-align: center;
+}
+
+a {
+  color: $link-colour;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 // Positioning
 .valign-wrapper {
   display: flex;
@@ -149,6 +148,29 @@ hr {
   .valign {
     display: block;
   }
+}
+
+// Hide Helper
+.hide {
+  display: none !important;
+}
+
+// Text Align
+.left-align {
+  text-align: left;
+}
+.right-align {
+  text-align: right
+}
+.center, .center-align {
+  text-align: center;
+}
+
+.left {
+  float: left !important;
+}
+.right {
+  float: right !important;
 }
 
 // Clearfix
@@ -194,4 +216,56 @@ hr {
 .hoverable:hover {
   transition: box-shadow .25s;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+// Hide / Show
+.hide-on-small-only, .hide-on-small-and-down {
+  @media #{$small-and-down} {
+    display: none !important;
+  }
+}
+.hide-on-med-and-down {
+  @media #{$medium-and-down} {
+    display: none !important;
+  }
+}
+.hide-on-med-and-up {
+  @media #{$medium-and-up} {
+    display: none !important;
+  }
+}
+.hide-on-med-only {
+  @media only screen and (min-width: $small-screen) and (max-width: $medium-screen) {
+    display: none !important;
+  }
+}
+.hide-on-large-only {
+  @media #{$large-and-up} {
+    display: none !important;
+  }
+}
+.show-on-large {
+  @media #{$large-and-up} {
+    display: block !important;
+  }
+}
+.show-on-medium {
+  @media only screen and (min-width: $small-screen) and (max-width: $medium-screen) {
+    display: block !important;
+  }
+}
+.show-on-small {
+  @media #{$small-and-down} {
+    display: block !important;
+  }
+}
+.show-on-medium-and-up {
+  @media #{$medium-and-up} {
+    display: block !important;
+  }
+}
+.show-on-medium-and-down {
+  @media #{$medium-and-down} {
+    display: block !important;
+  }
 }

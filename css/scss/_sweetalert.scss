@@ -1,6 +1,6 @@
 body.stop-scrolling {
   height: 100%;
-//  overflow: hidden;
+  overflow: hidden;
 }
 
 .sweet-overlay {
@@ -38,10 +38,6 @@ body.stop-scrolling {
   overflow: hidden;
   display: none;
   z-index: 99999;
-
-  -webkit-box-shadow: 0 4px 10px 3px rgba(0, 0, 0, 0.24);
-  -moz-box-shadow: 0 4px 10px 3px rgba(0, 0, 0, 0.24);
-  box-shadow: 0 4px 10px 3px rgba(0, 0, 0, 0.24);
 
   @media all and (max-width: 540px) {
     width: auto;
@@ -221,17 +217,12 @@ body.stop-scrolling {
 
     background-color: $btnBlue;
     color: white;
-      border: $button-border;
-      border-radius: $button-radius;
-      height: $button-height;
-  //    line-height: $button-height;
-      outline: 0;
-      padding: $button-padding;
-      text-transform: uppercase;
-      vertical-align: middle;
-      // Gets rid of tap active state
-      -webkit-tap-highlight-color: transparent;
+    border: none;
     box-shadow: none;
+    font-size: 17px;
+    font-weight: 500;
+    -webkit-border-radius: 4px;
+    border-radius: 5px;
     padding: 10px 32px;
     margin: 26px 5px 0 5px;
     cursor: pointer;

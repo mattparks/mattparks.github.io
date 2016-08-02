@@ -1,13 +1,9 @@
-$dropdown-bg-colour: #fff !default;
-$dropdown-hover-bg-colour: #eee !default;
-$dropdown-colour: $secondary-colour !default;
-$dropdown-item-height: 50px !default;
-
 .dropdown-content {
   @extend .z-depth-1;
   background-color: $dropdown-bg-colour;
   margin: 0;
   display: none;
+//  list-style: none;
   min-width: 100px;
   max-height: 650px;
   overflow-y: auto;

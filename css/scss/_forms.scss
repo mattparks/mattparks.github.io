@@ -1,0 +1,102 @@
+form {
+  margin: 0 auto;
+  text-align: left;
+
+  label {
+    display: block;
+    text-align: left;
+    font-size: 0.875em;
+  }
+
+  .text-input {
+    overflow: hidden;
+    margin-bottom: 0.875em;
+  }
+}
+
+form p {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+form p:last-child {
+  margin-bottom: 0;
+}
+
+input:not([type]),
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=time],
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=tel],
+input[type=number],
+input[type=search],
+textarea {
+  width: 100%;
+  padding: 1em 0 12px;
+  background: none;
+  font-size: 1.2em;
+  font-weight: 400;
+  border: none;
+  border-bottom: 1px solid #999;
+
+  .separator {
+    transform: scaleX(1) translateY(-2px);
+    opacity: 1;
+  }
+
+  // Disabled input style
+  &:disabled,
+  &[readonly="readonly"] {
+    color: $input-disabled-colour;
+    border-bottom: $input-disabled-border;
+  }
+
+  // Disabled label style
+  &:disabled+label,
+  &[readonly="readonly"]+label {
+    color: $input-disabled-colour;
+  }
+
+  // Focused input style
+  &:focus:not([readonly]) {
+    border-bottom: 1px solid $input-focus-colour;
+    box-shadow: 0 1px 0 0 $input-focus-colour;
+  }
+
+  // Focused label style
+  &:focus:not([readonly])+label {
+    color: $input-focus-colour;
+  }
+}
+
+textarea {
+  width: 100%;
+  max-width: 100%;
+  height: $input-textarea-height;
+  background-color: transparent;
+}
+
+.sized {
+  width: 400px;
+}
+
+.separator {
+  height: 3px;
+  width: 100%;
+  background: $primary-colour;
+  display: block;
+  transform: scaleX(0) translateY(-2px);
+  transform-origin: 50%;
+  opacity: 0;
+  transition: all 0.15s linear;
+}
+
+*:focus {
+  outline-color: transparent;
+  outline-style: none;
+}

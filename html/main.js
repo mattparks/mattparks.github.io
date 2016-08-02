@@ -34,19 +34,6 @@ $(document).ready(function() {
   $("#background").hide();
 
   loadNext(0);
-
-  setTimeout(function() {
-    $("#loader").fadeOut();
-    loadTimeline();
-    $("body").append('<script src="./js/prism.js"></script>');
-  }, 750);
-
-  setTimeout(function() {
-    changeImage(1);
-    updatePages();
-    updateNav();
-    updateSize();
-  }, 1750);
 });
 
 function loadNext(i) {
@@ -80,9 +67,23 @@ function loadNext(i) {
 
     if (nextI < pages.length) {
       loadNext(nextI);
+    } else {
+      completeLoad();
     }
   });
 }
+
+function completeLoad() {
+  $("body").append('<script src="./js/style.js"></script>');
+  $("body").append('<script src="./js/prism.js"></script>');
+  $("#loader").fadeOut();
+  loadTimeline();
+  changeImage(1);
+  updatePages();
+  updateNav();
+  updateSize();
+}
+
 
 function changeImage(i) {
   $("#background").attr("src", backgrounds[i]);
