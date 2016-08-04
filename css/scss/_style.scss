@@ -70,12 +70,22 @@ hr {
       padding: 1%;
     }
 
+    .left2 {
+      @extend .left;
+      width: 50%;
+    }
+
     .right {
       z-index: 3;
       position: relative;
       width: 61%;
       float: right;
       padding: 1%;
+    }
+
+    .right2 {
+      @extend .right;
+      width: 50%;
     }
   }
 }

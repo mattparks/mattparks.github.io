@@ -1,6 +1,7 @@
 .social-icons {
   max-width: 980px;
   margin: 0 auto;
+  margin-left: 15px;
 
   li {
     list-style-type: none;
@@ -69,6 +70,11 @@
 }
 
 // Customise Icons
+.icon--youtube a {
+  background-color: #e52d27;
+  background-image: url('../img/buttons/icons/youtube-128.png');
+}
+
 .icon--facebook a {
   background-color: #3b5998;
   background-image: url('../img/buttons/icons/facebook-128.png');

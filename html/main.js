@@ -10,13 +10,13 @@ function Page(id, path, name, loadFunction) {
 
 var pages = [
   new Page(0, "./html/content_about.html", "About", null),
-  new Page(1, './html/content_intro.html', "Intro", null),
-  new Page(2, "./html/content_skills.html", "Skills", function loadFunction() {
+  new Page(1, "./html/content_skills.html", "Skills", function loadFunction() {
     $('progress').each(function() {
       var max = $(this).val();
       $(this).val(0).animate({ value: max }, { duration: 2000, easing: 'easeOutCirc' });
 		});
   }),
+  new Page(2, './html/content_projects.html', "Projects", null),
   new Page(3, "./html/content_history.html", "History", null),
   new Page(4, "./html/content_contact.html", "Contact", null),
 ];
