@@ -62,7 +62,7 @@ hr {
 
     background-color: $background-colour;
 
-    .left {
+    .leftArea {
       z-index: 3;
       position: relative;
       width: 39%;
@@ -70,22 +70,12 @@ hr {
       padding: 1%;
     }
 
-    .left2 {
-      @extend .left;
-      width: 50%;
-    }
-
-    .right {
+    .rightArea {
       z-index: 3;
       position: relative;
       width: 61%;
       float: right;
       padding: 1%;
-    }
-
-    .right2 {
-      @extend .right;
-      width: 50%;
     }
   }
 }
@@ -122,14 +112,14 @@ hr {
         text-align: center;
       }
 
-      .right {
+      .rightArea {
         position: static;
         width: 100%;
         float: center;
         padding: 1%;
       }
 
-      .left {
+      .leftArea {
         position: static;
         width: 100%;
         float: center;
@@ -148,6 +138,40 @@ a {
   color: $link-colour;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
+}
+
+// Icons
+.material-icons {
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga';
+}
+
+.icon-container i {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.icon-container .icon-preview {
+  height: 120px;
+  text-align: center;
+}
+
+.icon-container span {
+  display: block;
+}
+
+.icon-holder {
+  display: block;
+  text-align: center;
+  width: 150px;
+  height: 115px;
+
+  float: left;
+  margin: 0 0px 15px 0px;
+
+  p {
+    margin: 0 0;
+  }
 }
 
 // Positioning
@@ -169,9 +193,11 @@ a {
 .left-align {
   text-align: left;
 }
+
 .right-align {
   text-align: right
 }
+
 .center, .center-align {
   text-align: center;
 }
@@ -234,46 +260,55 @@ a {
     display: none !important;
   }
 }
+
 .hide-on-med-and-down {
   @media #{$medium-and-down} {
     display: none !important;
   }
 }
+
 .hide-on-med-and-up {
   @media #{$medium-and-up} {
     display: none !important;
   }
 }
+
 .hide-on-med-only {
   @media only screen and (min-width: $small-screen) and (max-width: $medium-screen) {
     display: none !important;
   }
 }
+
 .hide-on-large-only {
   @media #{$large-and-up} {
     display: none !important;
   }
 }
+
 .show-on-large {
   @media #{$large-and-up} {
     display: block !important;
   }
 }
+
 .show-on-medium {
   @media only screen and (min-width: $small-screen) and (max-width: $medium-screen) {
     display: block !important;
   }
 }
+
 .show-on-small {
   @media #{$small-and-down} {
     display: block !important;
   }
 }
+
 .show-on-medium-and-up {
   @media #{$medium-and-up} {
     display: block !important;
   }
 }
+
 .show-on-medium-and-down {
   @media #{$medium-and-down} {
     display: block !important;

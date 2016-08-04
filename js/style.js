@@ -187,7 +187,6 @@
             open = false;
           }
         });
-
       } else { // Click.
         // Click handler to show dropdown.
         origin.unbind('click.' + origin.attr('id'));
@@ -233,10 +232,32 @@
 }(jQuery));
 
 $(document).ready(function() {
+  // Waves
   Waves.init(config = {
     duration: 1000,
     delay: 500
   });
+
+  // Cards
+  $(document).on('click.card', '.card', function (e) {
+      if ($(this).find('> .card-reveal').length) {
+        if ($(e.target).is($('.card-reveal .card-title')) || $(e.target).is($('.card-reveal .card-title i'))) {
+          // Make Reveal animate down and display none
+          $(this).find('.card-reveal').velocity(
+            {translateY: 0}, {
+              duration: 225,
+              queue: false,
+              easing: 'easeInOutQuad',
+              complete: function() { $(this).css({ display: 'none'}); }
+            }
+          );
+        }
+        else if ($(e.target).is($('.card .activator')) || $(e.target).is($('.card .activator i')) ) {
+          $(e.target).closest('.card').css('overflow', 'hidden');
+          $(this).find('.card-reveal').css({ display: 'block'}).velocity("stop", false).velocity({translateY: '-100%'}, {duration: 300, queue: false, easing: 'easeInOutQuad'});
+        }
+      }
+    });
 
   // File Input Path
   $(document).on('change', '.file-field input[type="file"]', function () {

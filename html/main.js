@@ -17,8 +17,7 @@ var pages = [
 		});
   }),
   new Page(2, './html/content_projects.html', "Projects", null),
-  new Page(3, "./html/content_history.html", "History", null),
-  new Page(4, "./html/content_contact.html", "Contact", null),
+  new Page(3, "./html/content_contact.html", "Contact", null),
 ];
 var backgrounds = [
   "./img/slideshow/1.jpg",

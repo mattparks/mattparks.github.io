@@ -49,6 +49,12 @@ $dropdown-hover-bg-colour: #eee !default;
 $dropdown-colour: $secondary-colour !default;
 $dropdown-item-height: 50px !default;
 
+/* Cards. **********/
+$card-padding: 20px !default;
+$card-bg-colour: #fff !default;
+$card-link-colour: colour("orange", "accent-2") !default;
+$card-link-colour-light: lighten($card-link-colour, 20%) !default;
+
 /* Forms. **********/
 $num-cols: 12 !default;
 $gutter-width: 1.5rem !default;
