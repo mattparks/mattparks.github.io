@@ -53,6 +53,8 @@ hr {
   position: relative;
   background-color: #404456;
 
+  display: none;
+
   .content {
     width: 100%;
     padding: 2%;
@@ -83,6 +85,8 @@ hr {
 .move {
   z-index: 2;
   position: relative;
+
+  display: none;
 
   width: 100%;
   height: 80px;

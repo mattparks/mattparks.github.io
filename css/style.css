@@ -1940,7 +1940,7 @@ hr { display: block; height: 2px; border: 0; border-top: 2px solid #bdbdbd; marg
 
 .main { z-index: 2; position: relative; overflow: hidden; width: 100%; height: 100%; top: 0; }
 
-.scroll { z-index: 2; position: relative; background-color: #404456; }
+.scroll { z-index: 2; position: relative; background-color: #404456; display: none; }
 
 .scroll .content { width: 100%; padding: 2%; line-height: 25px; overflow: hidden; display: block; background-color: #fafafa; }
 
@@ -1948,7 +1948,7 @@ hr { display: block; height: 2px; border: 0; border-top: 2px solid #bdbdbd; marg
 
 .scroll .content .rightArea { z-index: 3; position: relative; width: 61%; float: right; padding: 1%; }
 
-.move { z-index: 2; position: relative; width: 100%; height: 80px; line-height: 80px; font-size: 17px; color: #fafafa; background: rgba(51, 51, 51, 0.8); }
+.move { z-index: 2; position: relative; display: none; width: 100%; height: 80px; line-height: 80px; font-size: 17px; color: #fafafa; background: rgba(51, 51, 51, 0.8); }
 
 .move img { z-index: 5; position: relative; top: 13px; width: 31px; height: 31px; cursor: pointer; opacity: 0.75; filter: alpha(opacity=75); }
 

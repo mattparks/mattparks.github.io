@@ -54,8 +54,8 @@ function loadNext(i) {
     };
     li.appendChild(a);
 
-    $("#" + getScroll(pages[i])).css("left", i % 2 ? "-100%" : "200%");
-    $("#" + getMove(pages[i])).css("left", i % 2 ? "-100%" : "200%");
+  //  $("#" + getScroll(pages[i])).css("left", i % 2 ? "-100%" : "200%");
+  //  $("#" + getMove(pages[i])).css("left", i % 2 ? "-100%" : "200%");
 
     if (i === 0) {
       $("#" + getScroll(pages[i])).css("margin-top", "50px");
@@ -73,14 +73,23 @@ function loadNext(i) {
 }
 
 function completeLoad() {
-  $("body").append('<script src="./js/style.js"></script>');
-  $("body").append('<script src="./js/prism.js"></script>');
   $("#loader").fadeOut();
-  loadTimeline();
-  changeImage(1);
-  updatePages();
-  updateNav();
-  updateSize();
+
+  setTimeout(function() {
+    $("body").append('<script src="./js/style.js"></script>');
+    $("body").append('<script src="./js/prism.js"></script>');
+    loadTimeline();
+    changeImage(1);
+
+    for (var i = 0; i < pages.length; i++) {
+      $("#" + getScroll(pages[i])).fadeIn();
+      $("#" + getMove(pages[i])).fadeIn();
+    }
+
+    updatePages();
+    updateNav();
+    updateSize();
+  }, 700);
 }
 
 
