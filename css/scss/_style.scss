@@ -12,123 +12,189 @@
   box-sizing: border-box;
 }
 
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
 body {
   color: $text-colour;
-  background-color: #404456;
+  background-color: $background-colour;
 }
 
 hr {
   display: block;
   height: 2px;
   border: 0;
-  border-top: 2px solid #bdbdbd;
+  border-top: 4px solid #dddddd;
   margin: 2em 0;
   padding: 0;
 }
 
-#background {
-  z-index: 1;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-	-webkit-filter: blur(5px);
-	filter: blur(5px);
+#wrapper {
+	min-height: 100%;
+	position: relative;
 }
 
-.main {
-  z-index: 2;
-  position: relative;
+header {
+  text-align: center;
+  background-color: $primary-colour;
+  color: #fff;
 
-  overflow: hidden;
-
-  width: 100%;
-  height: 100%;
-
-  top: 0;
-}
-
-.scroll {
-  z-index: 2;
-  position: relative;
-  background-color: #404456;
-
-  display: none;
-
-  .content {
-    width: 100%;
-    padding: 2%;
-    line-height: 25px;
-    overflow: hidden;
-    display: block;
-
-    background-color: $background-colour;
-
-    .leftArea {
-      z-index: 3;
-      position: relative;
-      width: 39%;
-      float: left;
-      padding: 1%;
-    }
-
-    .rightArea {
-      z-index: 3;
-      position: relative;
-      width: 61%;
-      float: right;
-      padding: 1%;
-    }
+  h1 {
+    margin: 0.9em 0 0 0;
+    padding: 0;
+    font-weight: 300;
+    font-size: 1.8em;
+    line-height: 1.8;
+    -webkit-backface-visibility: hidden;
+    color: #fff;
   }
-}
 
-.move {
-  z-index: 2;
-  position: relative;
-
-  display: none;
-
-  width: 100%;
-  height: 80px;
-
-  line-height: 80px;
-  font-size: 17px;
-
-  color: $background-colour;
-  background: rgba(51, 51, 51, 0.8);
+  p {
+    font-size: 1em;
+    margin: .1em 0 .6em;
+    display: inline-block;
+    font-style: italic;
+    padding: 6px 10px;
+    background: colour("teal", "accent-3") !important;
+    color: #345;
+    color: rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+    line-height: 1;
+  }
 
   img {
-    z-index: 5;
-    position: relative;
-    top: 13px;
-    width: 31px;
-    height: 31px;
-    cursor: pointer;
-    opacity: 0.75;
-    filter: alpha(opacity=75);
+    width: 158px;
+    height: 158px;
+    border-radius: 50%;
+    border: 6px
+    solid $secondary-colour;
+
+    transition-duration: 0.5s;
+
+    &:hover {
+      @extend .z-depth-2;
+    }
+  }
+
+  .container {
+    padding: 2%;
+
+    width: 75%;
+  }
+
+  nav {
+    padding-top: 1%;
+    background-color: $primary-colour-dark;
   }
 }
 
-@media only screen and (max-width: 800px) {
-  .scroll {
-    .content {
-      h1, p {
-        text-align: center;
-      }
+#main {
+  position: relative;
+  width: 100%;
+  padding: 3%;
+}
 
-      .rightArea {
-        position: static;
-        width: 100%;
-        float: center;
-        padding: 1%;
-      }
+.section-title {
+  position: relative;
+  margin-bottom: 1em;
+  font-size: 22px;
+  font-weight: 400;
+  text-align: left;
+}
 
-      .leftArea {
-        position: static;
-        width: 100%;
-        float: center;
-        padding: 1%;
+.section-title:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  border-bottom: 4px solid #dddddd;
+}
+
+.section-title span {
+  position: relative;
+  display: inline-block;
+  padding-right: 1.4em;
+  color: $primary-colour;
+  background: $background-colour;
+}
+
+.section-title i {
+  padding: 6px;
+  border-radius: 50%;
+  color: #dddddd;
+  border: 4px solid #dddddd;
+  margin-right: 16px;
+  font-size: 24px;
+}
+
+.content {
+  z-index: 3;
+  line-height: 25px;
+  overflow: hidden;
+  display: block;
+}
+
+footer {
+//	position: absolute;
+//	bottom: 0;
+//	left: 0;
+//	right: 0;
+
+  text-align: center;
+  background-color: $primary-colour;
+  color: #fff;
+
+  .container {
+    padding: 2%;
+
+    width: 75%;
+
+    h1 {
+      font-size: 1.64rem;
+      line-height: 110%;
+      margin: 0.82rem 0 0.656rem 0;
+    }
+  }
+
+  .footer_button {
+    padding-right: 5px;
+    padding-left: 5px;
+
+    img {
+      width: 78px;
+      height: 78px;
+
+      transition-duration: 0.5s;
+      -webkit-transition-duration: 0.5s;
+
+      opacity: 0.6;
+
+      &:hover {
+        opacity: 1.0;
       }
+    }
+  }
+
+  .copyright {
+    background-color: $primary-colour-dark;
+    padding: 15px 0;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  header {
+    .container {
+      width: 100%;
+    }
+  }
+
+  footer {
+    .container {
+      width: 100%;
     }
   }
 }

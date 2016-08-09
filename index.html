@@ -6,41 +6,470 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="description" content="Matthews (mattparks) portfolio website.">
-    <title>Matthews Homepage</title>
-    <!-- Favicons. -->
+    <title>Matthew A's Homepage</title>
+    <!-- Favicons.-->
     <link rel="apple-touch-icon-precomposed" href="./img/favicon/apple-touch-icon-152x152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-TileImage" content="./img/favicon/mstile-144x144.png">
     <link rel="icon" href="./img/favicon/favicon-32x32.png" sizes="32x32">
-    <!-- Android 5 Chrome Primaty Colour. -->
+    <!-- Android 5 Chrome Primaty Colour.-->
     <meta name="theme-color" content="#42A5F5">
-    <!-- CSS. -->
+    <!-- CSS.-->
     <link href="./css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- Scripts. -->
+    <!-- Scripts.-->
     <script src="./js/jquery-3.1.0.min.js"></script>
     <script src="./js/jquery-ui.min.js"></script>
     <script src="./js/velocity.min.js"></script>
     <script src="./js/sweetalert.js"></script>
     <script src="./js/waves.js"></script>
-
-    <!-- Main Script. -->
-    <script src="./html/main.js"></script>
   </head>
+  <body ng-app="mainApp">
+    <div id="wrapper"><header>
+  <div class="container">
+    <a href="#/" style="overflow:visible;" class="waves-effect">
+      <img src="https://pbs.twimg.com/profile_images/506606279096139776/PyeAp4S8.jpeg"/>
+    </a>
+    <h1>Matthew A</h1>
+    <p>Web developer & Java developer</p>
+  </div>
+  <nav>
+    <a href="#/projects" class="btn btn-large btn-clear white-text waves-effect">Projects</a>
+    <a href="#/resume" class="btn btn-large btn-clear white-text waves-effect">Resume</a>
+    <a href="#/contact" class="btn btn-large btn-clear white-text waves-effect">Contact</a>
+  </nav>
+</header>
 
-  <body>
-    <img id="background" src=""/>
+      <div id="main">
+        <div ng-view="" class="page pageClass {{ }}"></div>
+      </div><footer>
+  <div class="container">
+    <h1>Let's Socialize</h1>
+    <p>
+      I frequently go on my social medias, feel free to follow me on Twitter and subscribe to me on Youtube.
+      Feel free to message me and use my <a href="#/contact">contact page</a>.
+    </p><br/>
+    <p>
+      <a href="https://twitter.com/Mattparks5855" target="_blank" title="Follow Me On Twitter" alt="Follow Me On Twitter" class="footer_button waves-effect">
+        <img src="./img/buttons/icons/twitter-128.png">
+      </a>
+      <a href="https://github.com/mattparks" target="_blank" title="Follow Me On Github" alt="Follow Me On Github" class="footer_button waves-effect">
+        <img src="./img/buttons/icons/github-128.png">
+      </a>
+      <a href="https://www.youtube.com/user/Mattparks5855" target="_blank" title="Subscribe To Me On Youtube" alt="Subscribe To Me On Youtube" class="footer_button waves-effect">
+        <img src="./img/buttons/icons/youtube-128.png">
+      </a>
+    </p>
+  </div>
+  <div class="copyright">
+    <p>Copyright © 2016 Matthew Albrecht. | All Rights Reserved.</p>
+  </div>
+</footer>
 
-    <div id="navbar"></div>
-    <div id="cssmenu"><ul class="nav-menu-items"></ul></div>
+    </div>
+    <script type="text/ng-template" id="about.html"><div class="content">
+  <h2 class="section-title">
+    <span><i class="material-icons">perm_identity</i>About Me</span>
+  </h2>
 
-    <div id="loader">
-      <div id="box"></div>
-      <div id="hill"></div>
+  <p>
+    Hello, my name is Matthew Albrecht;
+    I am a 16 year old <b>Website and Java developer</b> from <i>Milwaukee Wisconsin</i>.
+    I enjoy creating clean, useful website and creating clean code.
+    I am always looking to learn more about computers.
+    Recently I have been developing websites and a 3D Game Engine,
+    but just a few years ago I was making Minecraft mods such as 4Space and Minestellar.
+    I try to make my games / mods as realistic as possible without sacrificing gameplay.
+    In addition all of my code is open source on My Github.
+    I learned how to program by making Minecraft mods, is a great way to learn Java and getting to learn a first computer language.
+    I'm very proud with my work, but my work would be completely worthless to me if other people did not like it too.
+    That is why I am always looking for suggestions and also help in development.
+  </p><br/>
+
+  <h2 class="section-title">
+    <span><i class="material-icons">library_books</i>Current Projects</span>
+  </h2>
+
+  <div class="row">
+    <div class="col s4">
+      <div class="card" style="overflow: hidden;">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="./img/4Space.jpg">
+        </div>
+
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">4Space<i class="material-icons right">more_vert</i></span>
+        </div>
+
+        <div class="card-reveal" style="display: none; transform: translateY(0px);">
+          <span class="card-title grey-text text-darken-4">4Space<i class="material-icons right">close</i></span><hr/>
+          <center>
+            <p>
+              Want to explore many planets, asteroids and moons?
+              Want to blast off with many new rockets, craft new armors, mine new ores and build with many new blocks?
+              4Space includes all of the planets in our solar systems, and even some moons!
+              So what are you waiting for?
+              The solar system isn’t going to explore itself!
+              4Space was created in 2013 by me and CombatXarms12, scene then there have been many rewrites but to this day there is still an active community.
+            </p>
+            <br/>
+            <a class="btn btn-medium btn-orange btn-radius waves-effect" href="http://4space.mods.center/" target="_blank">Homepage</a>
+          </center>
+        </div>
+      </div>
     </div>
 
-    <div id="main" class="main"></div>
+    <div class="col s4">
+      <div class="card" style="overflow: hidden;">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="./img/flounder.jpg">
+        </div>
+
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Flounder Engine<i class="material-icons right">more_vert</i></span>
+        </div>
+
+        <div class="card-reveal" style="display: none; transform: translateY(0px);">
+          <span class="card-title grey-text text-darken-4">Flounder Engine<i class="material-icons right">close</i></span><hr/>
+          <center>
+            <p>
+              The Flounder Engine is a 3D engine built on LWJGL with no other librarys.
+              The engine supports 3D and 2D along with API's for physics, maths, music, sounds and more.
+              The goal of the engine was to create a skeleton engine for creating games without worrying about creating a bunch of new code that the engine alreay has.
+              It is currently on the final stages on development,  this has been a year project for me and will be used in future games by me.
+            </p>
+            <br/>
+            <a class="btn btn-medium btn-green btn-radius waves-effect" href="https://github.com/EquilibriumGames/Flounder-Engine" target="_blank">Github</a>
+          </center>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s4">
+      <div class="card" style="overflow: hidden;">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="./img/darknote.jpg">
+        </div>
+
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">DarkNote<i class="material-icons right">more_vert</i></span>
+        </div>
+
+        <div class="card-reveal" style="display: none; transform: translateY(0px);">
+          <span class="card-title grey-text text-darken-4">DarkNote<i class="material-icons right">close</i></span><hr/>
+          <center>
+            <p>
+              DarkNote is a 2D platformer game that uses a Perlin generator to create infinite assortments of music and levels to explore.
+              We use a difficulty level on players to determine how hard each level should be, as the player goes throughout each level they will pick up experience, lives, health, points and attacks.
+              DarkNote was going to be featured on a TV game show but that has sence fallen though.
+            </p>
+            <br/>
+            <a class="btn btn-medium btn-brown btn-radius waves-effect" href="https://www.indiegogo.com/projects/darknote#/" target="_blank">Indiegogo</a>
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <center>
+    <a class="btn btn-medium btn-pink btn-radius waves-effect" href="#/projects">More Projects</a>
+  </center>
+
+  <h2 class="section-title">
+    <span><i class="material-icons">loop</i>Work Process</span>
+  </h2>
+
+  <div class="row">
+    <div class="col s4">
+      <div class="card">
+        <div class="card-image">
+          <img src="http://bookstoeat.com/wp-content/uploads/2015/07/Philosophy-books.jpg">
+          <span class="card-title">My Philosophy</span>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s4">
+      <div class="card">
+        <div class="card-image">
+          <img src="http://i0.wp.com/www.diversecommunityconnectors.com/wp-content/uploads/2014/10/1Process7Steps.jpg">
+          <span class="card-title">My Process</span>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s4">
+      <div class="card">
+        <div class="card-image">
+          <img src="http://s3.amazonaws.com/libapps/customers/4624/images/collaboration.jpg">
+          <span class="card-title">Collaboration</span>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">
+    <span><i class="material-icons">assessment</i>Favourite Languages</span>
+  </h2>
+
+  <div class="row">
+    <div class="col s4">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://blog.zingchart.com/content/images/2016/06/javscript-1.png">
+        </div>
+      </div>
+    </div>
+    <div class="col s4">
+      <div class="card">
+        <div class="card-image">
+          <img src="http://www.bragitoff.com/wp-content/uploads/2015/08/cpp-logo.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="col s4">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://udemy-images.udemy.com/course/750x422/629302_8a2d.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s4">
+      <div class="card">
+        <div class="card-image">
+          <img src="http://nearsoft.com/admin/wp-content/uploads/2015/11/joinus-java.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="col s4">
+      <div class="card">
+        <div class="card-image">
+          <img src="http://linkis.com/url-image/https://cms-assets.tutsplus.com/uploads/users/48/posts/22653/preview_image/jade.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="col s4">
+      <div class="card">
+        <div class="card-image">
+          <img src="http://www.wrock.org/wp-content/uploads/2016/01/css_vs_scss_vs_sass.png">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </script>
+    <script type="text/ng-template" id="projects.html"><div class="content">
+  <h2 class="section-title">
+    <span><i class="material-icons">library_books</i>My Projects</span>
+  </h2>
+  <p>I take pride in my projects, so I have created a panel of the top projects I have worked on over the past year:</p>
+  <br/>
+
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <div class="card" style="overflow: hidden;">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="./img/4Space.jpg">
+          </div>
+
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">4Space<i class="material-icons right">more_vert</i></span>
+          </div>
+
+          <div class="card-reveal" style="display: none; transform: translateY(0px);">
+            <span class="card-title grey-text text-darken-4">4Space<i class="material-icons right">close</i></span><hr/>
+            <center>
+              <p>
+                Want to explore many planets, asteroids and moons?
+                Want to blast off with many new rockets, craft new armors, mine new ores and build with many new blocks?
+                4Space includes all of the planets in our solar systems, and even some moons!
+                So what are you waiting for?
+                The solar system isn’t going to explore itself!
+                4Space was created in 2013 by me and CombatXarms12, scene then there have been many rewrites but to this day there is still an active community.
+              </p>
+              <br/>
+              <a class="btn btn-medium btn-orange btn-radius waves-effect" href="http://4space.mods.center/" target="_blank">Homepage</a>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <div class="card" style="overflow: hidden;">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="./img/flounder.jpg">
+          </div>
+
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Flounder Engine<i class="material-icons right">more_vert</i></span>
+          </div>
+
+          <div class="card-reveal" style="display: none; transform: translateY(0px);">
+            <span class="card-title grey-text text-darken-4">Flounder Engine<i class="material-icons right">close</i></span><hr/>
+            <center>
+              <p>
+                The Flounder Engine is a 3D engine built on LWJGL with no other librarys.
+                The engine supports 3D and 2D along with API's for physics, maths, music, sounds and more.
+                The goal of the engine was to create a skeleton engine for creating games without worrying about creating a bunch of new code that the engine alreay has.
+                It is currently on the final stages on development,  this has been a year project for me and will be used in future games by me.
+              </p>
+              <br/>
+              <a class="btn btn-medium btn-green btn-radius waves-effect" href="https://github.com/EquilibriumGames/Flounder-Engine" target="_blank">Github</a>
+            </center>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12">
+        <div class="card" style="overflow: hidden;">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="./img/darknote.jpg">
+          </div>
+
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">DarkNote<i class="material-icons right">more_vert</i></span>
+          </div>
+
+          <div class="card-reveal" style="display: none; transform: translateY(0px);">
+            <span class="card-title grey-text text-darken-4">DarkNote<i class="material-icons right">close</i></span><hr/>
+            <center>
+              <p>
+                DarkNote is a 2D platformer game that uses a Perlin generator to create infinite assortments of music and levels to explore.
+                We use a difficulty level on players to determine how hard each level should be, as the player goes throughout each level they will pick up experience, lives, health, points and attacks.
+                DarkNote was going to be featured on a TV game show but that has sence fallen though.
+              </p>
+              <br/>
+              <a class="btn btn-medium btn-brown btn-radius waves-effect" href="https://www.indiegogo.com/projects/darknote#/" target="_blank">Indiegogo</a>
+            </center>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12">
+        <div class="card" style="overflow: hidden;">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="./img/msecure.jpg">
+          </div>
+
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">MSecure Admin<i class="material-icons right">more_vert</i></span>
+          </div>
+
+          <div class="card-reveal" style="display: none; transform: translateY(0px);">
+            <span class="card-title grey-text text-darken-4">MSecure Admin<i class="material-icons right">close</i></span><hr/>
+            <center>
+              <p>MSecure Admin is a simple website back end in development by me using Node.JS on the server. The goal is to be a simpler Wordpress with more freedom to me.</p>
+              <br/>
+              <a class="btn btn-medium btn-red btn-radius waves-effect" href="http://mattyparks.com/MSecure-Admin/login.html" target="_blank">Website</a>
+            </center>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12">
+        <div class="card" style="overflow: hidden;">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="./img/flatmatt.jpg">
+          </div>
+
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">FlatMatt Theme<i class="material-icons right">more_vert</i></span>
+          </div>
+
+          <div class="card-reveal" style="display: none; transform: translateY(0px);">
+            <span class="card-title grey-text text-darken-4">FlatMatt Theme<i class="material-icons right">close</i></span><hr/>
+            <center>
+              <p>This website theme was created by me to showcase how flat themes can be used outside of material design.</p>
+              <br/>
+              <a class="btn btn-medium btn-blue btn-radius waves-effect" href="http://mattyparks.com/FlatMatt-Theme/" target="_blank">Website</a>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </script>
+    <script type="text/ng-template" id="resume.html"><div class="content">
+  <h2 class="section-title">
+    <span><i class="material-icons">list</i>My Resume</span>
+  </h2>
+
+  <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
+</div>
+
+    </script>
+    <script type="text/ng-template" id="contact.html"><div class="content">
+  <h2 class="section-title">
+    <span><i class="material-icons">message</i>Contact Me</span>
+  </h2>
+
+  <p>
+    To contact me fill out <b>the form below</b>.
+    I will reply as soon as I humanly can.
+    I look forward to reading your message.
+    Please feel free to send me an email, at <i>mattparks5855@gmail.com</i>, or fill in this handy contact form.
+    My aim is to reply <b>within 48 hours</b>.
+  </p><br/>
+
+  <form method="post" action="#" class="sized" id="contact-form">
+        <div class="text-input">
+          <label for="name">Full Name</label>
+          <input type="text" name="name" id="name" class="validate" placeholder="" />
+          <span class="separator"> </span>
+        </div>
+        <div class="text-input">
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email" class="validate" placeholder="" />
+          <span class="separator"> </span>
+        </div>
+        <div class="text-input">
+          <label for="subject">Subject</label>
+          <input type="text" name="subject" id="subject" class="validate" placeholder="" />
+          <span class="separator"> </span>
+        </div>
+        <div class="text-input">
+          <label for="textarea">Textarea</label>
+          <textarea type="textarea" name="textarea" id="textarea" class="validate" placeholder="" />
+        </div>
+
+        <center>
+          <br/>
+          <a onClick="sendEmail();" class="btn btn-medium btn-blue btn-radius waves-effect">Submit</a>
+          <a onClick="clearForms();" class="btn btn-medium btn-orange btn-radius waves-effect">Reset</a>
+        </center>
+      </form>
+</div>
+
+    </script>
+    <!-- Main Scripts.-->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+    <script src="./js/style.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>

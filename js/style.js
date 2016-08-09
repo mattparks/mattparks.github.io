@@ -232,6 +232,10 @@
 }(jQuery));
 
 $(document).ready(function() {
+  loadStyles();
+});
+
+function loadStyles() {
   // Waves
   Waves.init(config = {
     duration: 1000,
@@ -272,4 +276,4 @@ $(document).ready(function() {
     path_input.val(file_names.join(", "));
     path_input.trigger('change');
   });
-});
+}

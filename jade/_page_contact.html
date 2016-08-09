@@ -1,0 +1,41 @@
+<div class="content">
+  <h2 class="section-title">
+    <span><i class="material-icons">message</i>Contact Me</span>
+  </h2>
+
+  <p>
+    To contact me fill out <b>the form below</b>.
+    I will reply as soon as I humanly can.
+    I look forward to reading your message.
+    Please feel free to send me an email, at <i>mattparks5855@gmail.com</i>, or fill in this handy contact form.
+    My aim is to reply <b>within 48 hours</b>.
+  </p><br/>
+
+  <form method="post" action="#" class="sized" id="contact-form">
+        <div class="text-input">
+          <label for="name">Full Name</label>
+          <input type="text" name="name" id="name" class="validate" placeholder="" />
+          <span class="separator"> </span>
+        </div>
+        <div class="text-input">
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email" class="validate" placeholder="" />
+          <span class="separator"> </span>
+        </div>
+        <div class="text-input">
+          <label for="subject">Subject</label>
+          <input type="text" name="subject" id="subject" class="validate" placeholder="" />
+          <span class="separator"> </span>
+        </div>
+        <div class="text-input">
+          <label for="textarea">Textarea</label>
+          <textarea type="textarea" name="textarea" id="textarea" class="validate" placeholder="" />
+        </div>
+
+        <center>
+          <br/>
+          <a onClick="sendEmail();" class="btn btn-medium btn-blue btn-radius waves-effect">Submit</a>
+          <a onClick="clearForms();" class="btn btn-medium btn-orange btn-radius waves-effect">Reset</a>
+        </center>
+      </form>
+</div>

@@ -1,0 +1,52 @@
+//output:../index.html
+
+doctype html
+html(lang='en')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='msapplication-tap-highlight', content='no')
+    meta(name='description', content='Matthews (mattparks) portfolio website.')
+    title Matthew A's Homepage
+    
+    // Favicons.
+    link(rel='apple-touch-icon-precomposed', href='./img/favicon/apple-touch-icon-152x152.png')
+    meta(name='msapplication-TileColor', content='#FFFFFF')
+    meta(name='msapplication-TileImage', content='./img/favicon/mstile-144x144.png')
+    link(rel='icon', href='./img/favicon/favicon-32x32.png', sizes='32x32')
+    
+    // Android 5 Chrome Primaty Colour.
+    meta(name='theme-color', content='#42A5F5')
+    
+    // CSS.
+    link(href='./css/style.css', type='text/css', rel='stylesheet', media='screen,projection')
+    link(href='http://fonts.googleapis.com/css?family=Inconsolata', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    
+    // Scripts.
+    script(src='./js/jquery-3.1.0.min.js')
+    script(src='./js/jquery-ui.min.js')
+    script(src='./js/velocity.min.js')
+    script(src='./js/sweetalert.js')
+    script(src='./js/waves.js')
+  body(ng-app='mainApp')
+    #wrapper
+      include _header.html
+      #main
+        .page.pageClass(class='{{ }}', ng-view='')
+      include _footer.html
+    script(type='text/ng-template', id='about.html')
+      include _page_about.html
+    script(type='text/ng-template', id='projects.html')
+      include _page_projects.html
+    script(type='text/ng-template', id='resume.html')
+      include _page_resume.html
+    script(type='text/ng-template', id='contact.html')
+      include _page_contact.html
+    // Main Scripts.
+    script(src='http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js')
+    script(src='http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js')
+    script(src='http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js')
+    script(src='./js/style.js')
+    script(src='./js/script.js')

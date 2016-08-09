@@ -1,10 +1,14 @@
 
 /* Colours. **********/
-$primary-colour: colour("blue", "lighten-1") !default;
+$primary-colour-base: "deep-purple";
+$primary-colour: colour($primary-colour-base, "lighten-1") !default;
 $primary-colour-light: lighten($primary-colour, 15%) !default;
 $primary-colour-dark: darken($primary-colour, 15%) !default;
 
-$secondary-colour: colour("blue", "accent-3") !default;
+.primary.colour { background-color: $primary-colour !important; }
+.primary.colour-text { color: $primary-colour !important; }
+
+$secondary-colour: colour($primary-colour-base, "accent-3") !default;
 $background-colour: colour("grey", "lighten-5") !default;
 
 $text-colour: colour("grey", "darken-4") !default;
