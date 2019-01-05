@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="shortcut icon" type="image/x-icon" href="./img/favicon.png">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link href="./css/main.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Dosis|Mukta:400,700" rel="stylesheet">
+		<title>Projects</title>
+	</head>
+	<body>
+		<wrapper class="d-flex flex-column">
+			<header class="header">
+				<div class="container">
+					<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: transparent;">
+						<a class="navbar-brand" href="./index.html">
+							<h2 class="fullname">Matthew Albrecht</h2>
+						</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+							<div class="navbar-nav ml-auto">
+								<a class="nav-item nav-link" href="index.html">Home</a>
+								<a class="nav-item nav-link active" href="projects.html">Projects <span class="sr-only">(current)</span></a>
+								<a class="nav-item nav-link" href="about.html">About</a>
+								<a class="nav-item nav-link" href="contact.html">Contact</a>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</header>
+			<main role="main" class="flex-fill">
+				<div class="jumbotron text-center">
+					<div class="container">
+						<div class="intro">
+							<h1>Projects</h1>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="card-deck projectset">
+						<div class="card">
+							<img class="card-img-top" src="./img/acid.png" alt="Acid Engine" height="250px">
+							<div class="card-body">
+								<h5 class="card-title">Acid Engine</h5>
+								<p class="card-text">Acid is a high speed, cross-platform, game engine written in C++17. Features are broken down into modules, modules can be added or removed from Acid with ease.</p>
+							</div>
+							<div class="card-footer text-center">
+								<a href="#" class="btn btn-light" data-toggle="modal" data-target="#acidDetails">Learn more</a>
+							</div>
+						</div>
+						<div class="card">
+							<img class="card-img-top" src="./img/polyorbis.jpg" alt="Polyorbis" height="250px">
+							<div class="card-body">
+								<h5 class="card-title">Polyorbis</h5>
+								<p class="card-text">Polyorbis was written in 3 days for the Ludum Dare 38 Jam, created by: Mattparks and Decaxon. The competitions theme is: A Small World. </p>
+							</div>
+							<div class="card-footer text-center">
+								<a href="#" class="btn btn-light" data-toggle="modal" data-target="#polyorbisDetails">Learn more</a>
+							</div>
+						</div>
+						<div class="card">
+							<img class="card-img-top" src="./img/flounder.png" alt="Flounder" height="250px">
+							<div class="card-body">
+								<h5 class="card-title">Flounder</h5>
+								<p class="card-text">Flounder is a LWJGL game engine written in Java.</p>
+							</div>
+							<div class="card-footer text-center">
+								<a href="#" class="btn btn-light" data-toggle="modal" data-target="#flounderDetails">Learn more</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal fade " id="acidDetails" tabindex="-1" role="dialog" aria-labelledby="acidDetails" aria-hidden="true">
+					<div class="modal-dialog modal-lg" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="acidDetails">Learn more about: Acid Engine</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<img src="./img/acid.png" alt="Acid Engine" class="img-thumbnail mx-auto d-block">
+								<br/><p>
+									Acid is a high speed, cross-platform, game engine written in C++17. Features are broken down into modules, modules can be added or removed from Acid with ease.
+								</p>
+								<p>
+									Vulkan is used as the only rendering API, as a result Vulkan can be used directly in games, but should be avoided. Metal is supported through MoltenVK, eventually OpenGL and DirectX will be supported in a similar way.
+								</p>
+								<p>
+									Acid is licensed under MIT and is open to contributions.
+								</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+								<a href="https://github.com/Equilibrium-Games/Acid" target="_blank" class="btn btn-light"><i class="fa fa-safari"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal fade " id="polyorbisDetails" tabindex="-1" role="dialog" aria-labelledby="polyorbisDetails" aria-hidden="true">
+					<div class="modal-dialog modal-lg" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="polyorbisDetails">Learn more about: Polyorbis</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal fade " id="flounderDetails" tabindex="-1" role="dialog" aria-labelledby="flounderDetails" aria-hidden="true">
+					<div class="modal-dialog modal-lg" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="flounderDetails">Learn more about: Flounder</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal fade " id="tnad" tabindex="-1" role="dialog" aria-labelledby="tnad" aria-hidden="true">
+					<div class="modal-dialog modal-lg" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="tnad">Learn more about: 39Advertising</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal fade " id="rewardslive" tabindex="-1" role="dialog" aria-labelledby="rewardslive" aria-hidden="true">
+					<div class="modal-dialog modal-lg" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="rewardslive">Learn more about: Rewards Live</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+			<footer class="footer" style="margin-top: 50px;">
+				<div class="container text-center">
+					<div class="footer-icon">
+						<a href="https://github.com/mattparks" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>&nbsp;&nbsp;
+						<a href="https://www.linkedin.com/in/mattparks5855" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>&nbsp;&nbsp;
+						<a href="https://twitter.com/Mattparks5855" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>&nbsp;&nbsp;
+    					<a href="./files/resume.pdf" target="_blank"><i class="fa fa-file-o" aria-hidden="true"></i></a>&nbsp;&nbsp;
+    					<a href="mailto:mattparks5855@gmail.com" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>&nbsp;&nbsp;
+					</div>
+				</div>
+			</footer>
+		</wrapper>
+		<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous" type="5102f1f68ba757bc79fc4ec3-text/javascript"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous" type="5102f1f68ba757bc79fc4ec3-text/javascript"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous" type="5102f1f68ba757bc79fc4ec3-text/javascript"></script>
+		<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/2448a7bd/cloudflare-static/rocket-loader.min.js" data-cf-nonce="5102f1f68ba757bc79fc4ec3-" defer=""></script>
+	</body>
+</html>
