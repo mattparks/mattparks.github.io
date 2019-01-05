@@ -126,11 +126,15 @@ wrapper {
 .footer {
 	color: #ffffff;
 	background-color: #444e5c;
-	padding: 5px;
+	padding: 10px;
 }
 
 .footer-icon {
-	padding: 10px;
+	padding: 8px;
+}
+
+.fa {
+    font: normal normal normal 22px/1 FontAwesome;
 }
 
 .projectset {
